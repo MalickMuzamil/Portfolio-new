@@ -1,0 +1,138 @@
+.contact-logo-container {
+	display: flex;
+	justify-content: left;
+	padding-top: 25px;
+}
+
+.contact-logo {
+	display: flex;
+	position: fixed;
+	border: 1px solid white;
+	border-radius: 50%;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+	top: 4vh;
+}
+
+.contact-subtitle {
+	width: 100% !important;
+}
+
+/* main layout */
+
+.contact-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 60px;
+	margin-top: 120px;
+}
+
+/* left side text */
+
+.contact-left {
+	flex: 1;
+}
+
+/* right side form */
+
+.contact-form-container {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 0;
+}
+
+/* form styling */
+
+.contact-form {
+	width: 100%;
+	max-width: 420px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background: #fff;
+	padding: 28px;
+	border-radius: 12px;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form input,
+.contact-form textarea {
+	padding: 14px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	font-size: 14px;
+	font-family: inherit;
+	transition: border 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+	outline: none;
+	border-color: #000;
+}
+
+.contact-form textarea {
+	resize: none;
+}
+
+.contact-form button {
+	padding: 14px;
+	border: none;
+	border-radius: 8px;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.contact-form button:hover {
+	opacity: 0.85;
+}
+
+/* socials */
+
+.socials-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 80px;
+}
+
+.contact-socials {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+
+	.contact-container {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.contact-form-container {
+		justify-content: flex-start;
+		width: 100%;
+	}
+
+	.contact-form {
+		max-width: 100%;
+	}
+
+}
+
+@media (max-width: 600px) {
+
+	.contact-container {
+		margin-top: 100px;
+	}
+
+	.contact-form {
+		padding: 20px;
+	}
+
+}
