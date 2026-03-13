@@ -4,19 +4,38 @@
 	align-items: stretch;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	margin-left: -35px;
-	margin-right: -35px;
+	margin: auto;
+	max-width: 1400px;
 }
 
+/* Desktop - 3 cards */
+
 .all-projects-project {
-	width: calc(100% / 3);
+	width: 33.33%;
 	box-sizing: border-box;
-	padding: 10px;
-	overflow: hidden;
+	padding: 12px;
 }
+
+/* Laptop */
+
+@media (max-width: 1200px) {
+	.all-projects-project {
+		width: 50%;
+	}
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+	.all-projects-project {
+		width: 50%;
+	}
+}
+
+/* Mobile */
 
 @media (max-width: 600px) {
 	.all-projects-project {
-		width: calc(100% / 2);
+		width: 100%;
 	}
 }

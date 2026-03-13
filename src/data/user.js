@@ -39,46 +39,37 @@ const INFO = {
 
 	projects: [
 		{
-			title: "Project 1",
+			title: "Executive Dashboard (Admin Panel)",
 			description:
-				"A full stack web application built using the MERN stack with modern UI and scalable backend architecture.",
+				"Developed an operational admin dashboard for internal monitoring and data visualization. Implemented secure authentication and integrated backend APIs for real-time data updates.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://github.com/MalickMuzamil",
 		},
 
 		{
-			title: "Project 2",
+			title: "EverGreen Sable Web Application",
 			description:
-				"A modern web application developed using Next.js and React with optimized performance and SEO.",
+				"Built a modern web application with responsive UI animations and optimized performance. Implemented CSV export and dynamic Excel integration for automated data updates.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://github.com/MalickMuzamil",
 		},
 
 		{
-			title: "Project 3",
+			title: "Yanbu International Job Portal",
 			description:
-				"A responsive frontend project built using Angular and modern UI practices.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+				"Developed a multilingual job portal supporting Arabic and English languages. Integrated REST APIs to deliver real-time job listings and built responsive job listing interfaces.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/angular/angular.png",
 			linkText: "View Project",
 			link: "https://github.com/MalickMuzamil",
 		},
 
 		{
-			title: "Project 4",
+			title: "Opticians CRM & eStore Platform",
 			description:
-				"A backend API developed with Node.js and Express for scalable applications.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/MalickMuzamil",
-		},
-
-		{
-			title: "Project 5",
-			description:
-				"A full stack project using React, Node.js, and MongoDB.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+				"Created a full stack CRM and eStore registration platform with secure authentication and database integration. Designed scalable enterprise architecture and responsive UI.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/angular/angular.png",
 			linkText: "View Project",
 			link: "https://github.com/MalickMuzamil",
 		},

@@ -12,7 +12,6 @@ import {
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import TechStack from "../components/techstack/techstack";
 import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
@@ -102,7 +101,7 @@ const Homepage = () => {
 								<div className="homepage-image-container">
 									<div className="homepage-image-wrapper">
 										<img
-											src="homepage.jpg"
+											src="homepage.png"
 											alt="about"
 											className="homepage-image"
 										/>

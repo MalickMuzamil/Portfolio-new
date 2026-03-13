@@ -1,28 +1,31 @@
 const experience = [
 
-{
-date: "2024 - Present",
-title: "Full Stack Developer",
-company: "Freelance",
-description:
-"Building full stack web applications using React, Next.js, Angular, Node.js, Express, MongoDB and MySQL."
-},
+    {
+        company: "PostEx",
+        role: "Full Stack Developer",
+        duration: "Nov 2025 – Present",
+        description:
+            "Developed an internal logistics back-office platform used for shipment management and operational workflows. Built REST APIs using Node.js and Express enabling real-time data synchronization across internal systems and collaborated with cross-functional teams to deliver production-ready features.",
+        technologies: ["Node.js", "Express.js", "REST APIs", "Logistics Systems"]
+    },
 
-{
-date: "2023 - 2024",
-title: "Frontend Developer",
-company: "Personal Projects",
-description:
-"Developed responsive user interfaces using ReactJS and Next.js."
-},
+    {
+        company: "Team Seven (Pvt) Ltd",
+        role: "Full Stack Developer",
+        duration: "Jul 2023 – Nov 2025",
+        description:
+            "Developed responsive landing pages and full stack web applications using Angular, HTML, CSS, and Bootstrap. Improved UI responsiveness and cross-browser compatibility while managing collaborative development using Git version control.",
+        technologies: ["Angular", "Bootstrap", "HTML", "CSS", "Git"]
+    },
 
-{
-date: "2022 - 2023",
-title: "Web Development Learning",
-company: "Self Learning",
-description:
-"Focused on learning JavaScript, Node.js, Express, REST APIs, Git and modern web technologies."
-}
+    {
+        company: "LitGrey Technologies",
+        role: "Frontend Developer",
+        duration: "Jun 2025 – Oct 2025",
+        description:
+            "Worked on a CRM SaaS platform by building Angular components and integrating RESTful APIs for dynamic data handling. Optimized dashboard performance and created scalable modular UI components.",
+        technologies: ["Angular", "REST API", "SaaS", "CRM"]
+    },
 
 ];
 
