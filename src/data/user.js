@@ -44,7 +44,7 @@ const INFO = {
 				"Developed an operational admin dashboard for internal monitoring and data visualization. Implemented secure authentication and integrated backend APIs for real-time data updates.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://exec.postexglobal.com",
 		},
 
 		{
@@ -53,7 +53,7 @@ const INFO = {
 				"Built a modern web application with responsive UI animations and optimized performance. Implemented CSV export and dynamic Excel integration for automated data updates.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://evergreen-sable.vercel.app",
 		},
 
 		{
@@ -62,7 +62,7 @@ const INFO = {
 				"Developed a multilingual job portal supporting Arabic and English languages. Integrated REST APIs to deliver real-time job listings and built responsive job listing interfaces.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/angular/angular.png",
 			linkText: "View Project",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://yanbu-job-portal.vercel.app",
 		},
 
 		{
@@ -71,7 +71,7 @@ const INFO = {
 				"Created a full stack CRM and eStore registration platform with secure authentication and database integration. Designed scalable enterprise architecture and responsive UI.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/angular/angular.png",
 			linkText: "View Project",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://opticians.pk",
 		},
 	],
 };

@@ -18,6 +18,9 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 import techStack from "../data/techStack";
 
+import { Link } from "react-router-dom";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import "./styles/homepage.css";
 
 const Homepage = () => {
@@ -155,7 +158,14 @@ const Homepage = () => {
 						</div>
 
 						<div className="homepage-projects">
-							<AllProjects />
+							<AllProjects limit={3} />
+						</div>
+
+						<div className="homepage-more-projects">
+							<Link to="/projects" className="more-projects-btn">
+								Show More Projects
+								<FontAwesomeIcon icon={faArrowRight} />
+							</Link>
 						</div>
 
 						<div className="homepage-after-title">

@@ -1,10 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState, useEffect } from "react";
 
 import "./styles/navBar.css";
 
 const NavBar = (props) => {
 	const { active } = props;
+
+	const [theme, setTheme] = useState("light");
+
+	useEffect(() => {
+		const savedTheme = localStorage.getItem("theme");
+		if (savedTheme) {
+			setTheme(savedTheme);
+			document.documentElement.setAttribute("data-theme", savedTheme);
+		}
+	}, []);
+
+	const toggleTheme = () => {
+		const newTheme = theme === "light" ? "dark" : "light";
+		setTheme(newTheme);
+		document.documentElement.setAttribute("data-theme", newTheme);
+		localStorage.setItem("theme", newTheme);
+	};
 
 	return (
 		<React.Fragment>
@@ -56,6 +76,10 @@ const NavBar = (props) => {
 								}
 							>
 								<Link to="/contact">Contact</Link>
+							</li>
+
+							<li className="nav-item theme-toggle" onClick={toggleTheme}>
+								<FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} />
 							</li>
 						</ul>
 					</div>

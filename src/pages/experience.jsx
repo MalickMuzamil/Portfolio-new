@@ -42,12 +42,20 @@ const Experience = () => {
 
 					<div className="experience-main-container">
 
-						<div className="title experience-title-main">
-							Experience
-						</div>
+						<div className="experience-intro">
 
-						<div className="subtitle experience-subtitle">
-							My journey working with modern web technologies and building full stack applications.
+							<div className="experience-headline">
+								My professional journey building scalable web applications.
+							</div>
+
+							<div className="experience-paragraph">
+								I have worked on a variety of full stack and frontend development projects across logistics systems,
+								CRM platforms, and enterprise dashboards. My experience includes building modern web applications
+								using Angular, React, Next.js, Node.js, and Express.js while designing scalable APIs and responsive
+								user interfaces. I focus on creating maintainable code, optimizing performance, and delivering
+								production-ready features that support real business operations.
+							</div>
+
 						</div>
 
 						<div className="experience-container">
@@ -60,12 +68,16 @@ const Experience = () => {
 
 									<div className="experience-card">
 
-										<div className="experience-date">
-											{item.date}
-										</div>
+										<div className="experience-header">
 
-										<div className="experience-title">
-											{item.title}
+											<div className="experience-title">
+												{item.title}
+											</div>
+
+											<div className="experience-date">
+												{item.date}
+											</div>
+
 										</div>
 
 										<div className="experience-company">
