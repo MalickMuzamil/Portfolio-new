@@ -93,8 +93,8 @@ const INFO = {
 				"Angular-powered product website for Subhan Enterprises showcasing ATVs and quad bikes with responsive UI and clean catalog layout.",
 			logo: "/techstack/angular.svg",
 			stackIcons: ["/techstack/angular.svg", "/techstack/bootstrap.svg"],
-			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			linkText: "View Project",
+			link: "https://subhan-enterprises.vercel.app",
 		},
 
 		{
@@ -109,7 +109,7 @@ const INFO = {
 				"/techstack/mongodb.svg",
 			],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://github.com/MalickMuzamil/Employee-Tracking-System",
 		},
 
 		{
@@ -124,7 +124,7 @@ const INFO = {
 				"/techstack/express.svg",
 			],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://github.com/MalickMuzamil/Survey-App",
 		},
 
 		{
@@ -139,7 +139,7 @@ const INFO = {
 				"/techstack/express.svg",
 			],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://github.com/MalickMuzamil/POS-Inventory",
 		},
 
 		{
@@ -153,8 +153,8 @@ const INFO = {
 				"/techstack/mongodb.svg",
 				"/techstack/express.svg",
 			],
-			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			linkText: "View Project",
+			link: "sky-cast-core.vercel.app/",
 		},
 
 		{
@@ -164,7 +164,7 @@ const INFO = {
 			logo: "/techstack/angular.svg",
 			stackIcons: ["/techstack/angular.svg", "/techstack/bootstrap.svg"],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://github.com/MalickMuzamil/Car-Wash",
 		},
 
 		{
@@ -174,7 +174,7 @@ const INFO = {
 			logo: "/techstack/nextjs.svg",
 			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://rivio-web.vercel.app/",
 		},
 
 		{
@@ -184,7 +184,7 @@ const INFO = {
 			logo: "/techstack/nextjs.svg",
 			stackIcons: ["/techstack/nextjs.svg" , "/techstack/tailwindcss.svg"],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://delaeheim-master.vercel.app/",
 		},
 
 		{
@@ -204,7 +204,7 @@ const INFO = {
 			logo: "/techstack/git.svg",
 			stackIcons: ["/techstack/html.svg", "/techstack/css.svg"],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://github.com/MalickMuzamil/E-commerce",
 		},
 
 		{
@@ -219,7 +219,7 @@ const INFO = {
 				"/techstack/express.svg",
 			],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://github.com/MalickMuzamil/GPT-CLone",
 		},
 
 		{
@@ -229,7 +229,7 @@ const INFO = {
 			logo: "/techstack/git.svg",
 			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
 			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
+			link: "https://mix-viop.vercel.app/",
 		},
 	],
 };
