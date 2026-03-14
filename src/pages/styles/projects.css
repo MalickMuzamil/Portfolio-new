@@ -22,6 +22,33 @@
 	padding-top: 120px;
 }
 
+.projects-github-button{
+	margin-top: 25px;
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: end;
+}
+
+.projects-github-link{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 18px;
+	border-radius: 999px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	color: var(--primary-color);
+	background: var(--card-bg);
+	box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+	transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.projects-github-link:hover{
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
 @media (max-width: 600px) {
 	.projects-container {
 		padding-top: 60px;

@@ -56,8 +56,20 @@ const Projects = () => {
 							feedback.
 						</div>
 
-						<div className="projects-list" data-aos="fade-up" data-aos-delay="150">
+
+						<div className="projects-list" data-aos="fade-up" data-aos-delay="180">
 							<AllProjects />
+						</div>
+
+						<div className="projects-github-button" data-aos="fade-up" data-aos-delay="120">
+							<a
+								href={INFO.socials.github}
+								target="_blank"
+								rel="noreferrer"
+								className="projects-github-link"
+							>
+								Show GitHub
+							</a>
 						</div>
 					</div>
 					<div className="page-footer">

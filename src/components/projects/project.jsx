@@ -5,7 +5,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { logo, title, description, benefits, linkText, link } = props;
+	const { logo, stackIcons, title, description, benefits, linkText, link } = props;
 
 	return (
 		<div className="project">
@@ -13,7 +13,20 @@ const Project = (props) => {
 				<div className="project-container">
 
 					<div className="project-logo">
-						<img src={logo} alt={title} />
+						{stackIcons && stackIcons.length > 0 ? (
+							<div className="project-stack-icons">
+								{stackIcons.map((icon, index) => (
+									<img
+										key={index}
+										src={icon}
+										alt={`${title} tech ${index + 1}`}
+										className="project-stack-icon"
+									/>
+								))}
+							</div>
+						) : (
+							<img src={logo} alt={title} />
+						)}
 					</div>
 
 					<div className="project-title">{title}</div>

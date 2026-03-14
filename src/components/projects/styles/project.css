@@ -32,11 +32,26 @@
 }
 
 .project-logo {
-	width: 32px;
+	display: flex;
+	align-items: center;
+}
+
+.project-stack-icons {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.project-stack-icon {
+	width: 26px;
+	height: 26px;
+	object-fit: contain;
 }
 
 .project-logo img {
-	width: 100%;
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
 }
 
 .project-title {

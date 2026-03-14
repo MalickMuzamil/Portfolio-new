@@ -21,6 +21,7 @@ const AllProjects = ({ limit }) => {
 				>
 					<Project
 						logo={project.logo}
+						stackIcons={project.stackIcons}
 						title={project.title}
 						description={project.description}
 						benefits={project.benefits}
