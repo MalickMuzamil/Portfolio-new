@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ReactGA from "react-ga4";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Homepage from "./pages/homepage";
 import About from "./pages/about";
@@ -17,6 +19,13 @@ function App() {
 		if (TRACKING_ID !== "") {
 			ReactGA.initialize(TRACKING_ID);
 		}
+
+		AOS.init({
+			duration: 800,
+			easing: "ease-out-quart",
+			once: true,
+			offset: 80,
+		});
 	}, []);
 
 	return (

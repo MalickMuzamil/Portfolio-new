@@ -38,8 +38,8 @@ const About = () => {
 						</div>
 					</div>
 
-					<div className="about-container">
-						<div className="about-main">
+					<div className="about-container" data-aos="fade-up">
+						<div className="about-main" data-aos="fade-up" data-aos-delay="100">
 							<div className="about-right-side">
 								<div className="title about-title">
 									{INFO.about.title}
@@ -50,7 +50,7 @@ const About = () => {
 								</div>
 							</div>
 
-							<div className="about-left-side">
+							<div className="about-left-side" data-aos="fade-left" data-aos-delay="150">
 								<div className="about-image-container">
 									<div className="about-image-wrapper">
 										<img

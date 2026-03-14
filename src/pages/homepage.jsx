@@ -88,8 +88,8 @@ const Homepage = () => {
 						</div>
 					</div>
 
-					<div className="homepage-container">
-						<div className="homepage-first-area">
+					<div className="homepage-container" data-aos="fade-up">
+						<div className="homepage-first-area" data-aos="fade-up" data-aos-delay="100">
 							<div className="homepage-first-area-left-side">
 								<div className="title homepage-title">
 									{INFO.homepage.title}
@@ -113,7 +113,7 @@ const Homepage = () => {
 							</div>
 						</div>
 
-						<div className="homepage-socials">
+						<div className="homepage-socials" data-aos="fade-up" data-aos-delay="200">
 							<a
 								href={INFO.socials.linkedin}
 								target="_blank"
@@ -157,11 +157,11 @@ const Homepage = () => {
 							</a>
 						</div>
 
-						<div className="homepage-projects">
+						<div className="homepage-projects" data-aos="fade-up" data-aos-delay="250">
 							<AllProjects limit={3} />
 						</div>
 
-						<div className="homepage-more-projects">
+						<div className="homepage-more-projects" data-aos="fade-up" data-aos-delay="300">
 							<Link to="/projects" className="more-projects-btn">
 								Show More Projects
 								<FontAwesomeIcon icon={faArrowRight} />

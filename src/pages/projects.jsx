@@ -37,7 +37,7 @@ const Projects = () => {
 							<Logo width={46} />
 						</div>
 					</div>
-					<div className="projects-container">
+					<div className="projects-container" data-aos="fade-up">
 						<div className="title projects-title">
 							Things I’ve made trying to put my dent in the
 							universe.
@@ -56,7 +56,7 @@ const Projects = () => {
 							feedback.
 						</div>
 
-						<div className="projects-list">
+						<div className="projects-list" data-aos="fade-up" data-aos-delay="150">
 							<AllProjects />
 						</div>
 					</div>

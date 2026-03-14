@@ -40,9 +40,9 @@ const Experience = () => {
 						</div>
 					</div>
 
-					<div className="experience-main-container">
+					<div className="experience-main-container" data-aos="fade-up">
 
-						<div className="experience-intro">
+						<div className="experience-intro" data-aos="fade-up" data-aos-delay="50">
 
 							<div className="experience-headline">
 								My professional journey building scalable web applications.
@@ -62,7 +62,12 @@ const Experience = () => {
 
 							{experience.map((item, index) => (
 
-								<div className="experience-item" key={index}>
+								<div
+									className="experience-item"
+									key={index}
+									data-aos="fade-up"
+									data-aos-delay={120 + index * 80}
+								>
 
 									<div className="experience-dot"></div>
 

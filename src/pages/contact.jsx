@@ -38,9 +38,9 @@ const Contact = () => {
 						</div>
 					</div>
 
-					<div className="contact-container">
+					<div className="contact-container" data-aos="fade-up">
 
-						<div className="contact-left">
+						<div className="contact-left" data-aos="fade-right" data-aos-delay="80">
 							<div className="title contact-title">
 								Let's Get in Touch: Ways to Connect with Me
 							</div>
@@ -77,7 +77,7 @@ const Contact = () => {
 
 						</div>
 
-						<div className="contact-right">
+						<div className="contact-right" data-aos="fade-left" data-aos-delay="140">
 							<form className="contact-form">
 								<input type="text" placeholder="Your Name" required />
 								<input type="email" placeholder="Your Email" required />
