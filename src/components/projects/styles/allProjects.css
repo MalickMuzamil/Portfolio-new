@@ -13,8 +13,16 @@
 	width: 33.33%;
 	box-sizing: border-box;
 	padding: 12px;
+
+	display: flex; /* ⭐ important */
 }
 
+/* ⭐ project ko full height do */
+
+.all-projects-project .project {
+	width: 100%;
+	height: 100%;
+}
 
 /* Laptop */
 
