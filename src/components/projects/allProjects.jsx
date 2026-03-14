@@ -6,8 +6,8 @@ import "./styles/allProjects.css";
 
 const AllProjects = ({ limit }) => {
 
-	const projects = limit 
-		? INFO.projects.slice(0, limit) 
+	const projects = limit
+		? INFO.projects.slice(0, limit)
 		: INFO.projects;
 
 	return (
@@ -18,6 +18,7 @@ const AllProjects = ({ limit }) => {
 						logo={project.logo}
 						title={project.title}
 						description={project.description}
+						benefits={project.benefits}
 						linkText={project.linkText}
 						link={project.link}
 					/>

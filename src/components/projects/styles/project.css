@@ -17,9 +17,9 @@
 
 .project a {
 	text-decoration: none;
+	height: 100%;
+	display: block;
 }
-
-
 
 .project:hover .project-link {
 	color: var(--link-color);
@@ -27,14 +27,14 @@
 }
 
 .project-container {
-	padding: 20px;
+	padding: 22px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
 .project-logo {
-	width: 30px;
+	width: 32px;
 }
 
 .project-logo img {
@@ -44,23 +44,42 @@
 .project-title {
 	font-family: var(--secondary-font);
 	color: var(--primary-color);
-	font-size: 16px;
+	font-size: 17px;
 	padding-top: 15px;
-	margin-bottom: 1em;
+	margin-bottom: 10px;
 	font-weight: 700;
 }
 
 .project-description {
 	color: var(--secondary-color);
 	line-height: 1.6;
+	font-size: 14px;
 }
+
+/* ⭐ Benefits section */
+
+.project-benefits {
+	margin-top: 12px;
+	padding-left: 18px;
+}
+
+.project-benefits li {
+	color: var(--secondary-color);
+	font-size: 13px;
+	margin-bottom: 6px;
+	line-height: 1.5;
+	list-style: disc;
+}
+
+/* Link section */
 
 .project-link {
 	display: flex;
 	align-items: center;
 	color: var(--secondary-color);
 	font-size: 12px;
-	margin-top: 15px;
+	margin-top: auto;
+	padding-top: 15px;
 }
 
 .project-link-icon {
