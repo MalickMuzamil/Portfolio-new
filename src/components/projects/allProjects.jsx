@@ -13,7 +13,12 @@ const AllProjects = ({ limit }) => {
 	return (
 		<div className="all-projects-container">
 			{projects.map((project, index) => (
-				<div className="all-projects-project" key={index}>
+				<div
+					className="all-projects-project"
+					key={index}
+					data-aos="fade-up"
+					data-aos-delay={80 + index * 80}
+				>
 					<Project
 						logo={project.logo}
 						title={project.title}
