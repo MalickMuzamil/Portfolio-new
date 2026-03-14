@@ -88,6 +88,14 @@ const Experience = () => {
 											{item.description}
 										</div>
 
+										{item.benefits && item.benefits.length > 0 && (
+											<ul className="experience-benefits">
+												{item.benefits.map((benefit, benefitIndex) => (
+													<li key={benefitIndex}>{benefit}</li>
+												))}
+											</ul>
+										)}
+
 									</div>
 
 								</div>

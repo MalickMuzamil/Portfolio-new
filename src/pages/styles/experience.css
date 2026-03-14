@@ -93,6 +93,21 @@ line-height:24px;
 max-width:700px;
 }
 
+/* benefits list */
+
+.experience-benefits{
+	margin-top:12px;
+	padding-left:20px;
+}
+
+.experience-benefits li{
+	color:var(--secondary-color);
+	font-size:14px;
+	line-height:22px;
+	margin-bottom:6px;
+	list-style:disc;
+}
+
 [data-theme="dark"] .experience-card:hover{
 	box-shadow:
 	0 15px 40px rgba(0,0,0,0.65),
