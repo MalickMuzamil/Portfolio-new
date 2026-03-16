@@ -20,6 +20,7 @@ import techStack from "../data/techStack";
 
 import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/homepage.css";
 
@@ -155,6 +156,19 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
+
+							<a
+								href="/Full Stack (Muzamil Saleem).pdf"
+								target="_blank"
+								rel="noreferrer"
+								download
+							>
+								<FontAwesomeIcon
+									icon={faFileArrowDown}
+									className="homepage-social-icon"
+								/>
+							</a>
+
 						</div>
 
 						<div className="homepage-projects" data-aos="fade-up" data-aos-delay="250">
