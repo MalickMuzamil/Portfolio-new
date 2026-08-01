@@ -15,6 +15,27 @@ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:30px;
 }
 
+@media (max-width:768px){
+
+	.tech-grid{
+		grid-template-columns:repeat(2, minmax(0, 1fr));
+		gap:16px;
+	}
+
+	.tech-card{
+		padding:24px 12px;
+	}
+
+	.tech-icon img{
+		width:36px;
+		height:36px;
+	}
+
+	.tech-name{
+		font-size:14px;
+	}
+}
+
 .tech-card{
 background:var(--card-bg);
 border-radius:20px;

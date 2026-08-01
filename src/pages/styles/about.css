@@ -109,12 +109,26 @@
 	}
 }
 
-@media (max-width: 600px) {
-	.about-container {
-		padding-top: 60px;
+@media (max-width:600px){
+
+	.about-container{
+		padding-top:60px;
 	}
 
-	.about-image-container {
-		width: 80%;
+	.about-left-side{
+		display:flex;
+		align-items:center;
+		width:100%;
+	}
+
+	.about-image-container{
+		width:80%;
+		margin:0 auto;
+		display:flex;
+		justify-content:center;
+	}
+
+	.about-image-wrapper{
+		width:100%;
 	}
 }

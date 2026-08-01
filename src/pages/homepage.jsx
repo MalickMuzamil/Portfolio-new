@@ -129,7 +129,7 @@ const Homepage = () => {
 								</div>
 
 								<div className="homepage-stats" role="list" aria-label="Professional highlights">
-									<div className="homepage-stat" role="listitem">2+ Years Experience</div>
+									<div className="homepage-stat" role="listitem">3+ Years Experience</div>
 									<div className="homepage-stat" role="listitem">15+ Projects</div>
 									<div className="homepage-stat" role="listitem">20+ Technologies</div>
 									<div className="homepage-stat" role="listitem">Available for Work</div>

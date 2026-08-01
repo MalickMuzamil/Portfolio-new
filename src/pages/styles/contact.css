@@ -200,3 +200,41 @@
 	}
 
 }
+
+
+.contact-right{
+	flex:1;
+	display:flex;
+	justify-content:flex-end;
+	margin-top:0;
+}
+
+@media (max-width:900px){
+
+	.contact-right{
+		width:100%;
+		display:flex;
+		justify-content:center;
+	}
+
+	.contact-form{
+		width:100%;
+		max-width:100%;
+	}
+}
+
+@media (max-width:600px){
+
+	.contact-right{
+		width:100%;
+		padding:0;
+	}
+
+	.contact-form{
+		width:100%;
+		max-width:100%;
+		margin:0;
+		padding:20px;
+		box-sizing:border-box;
+	}
+}
