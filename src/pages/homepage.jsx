@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faMailBulk, faArrowRight, faFileArrowDown, faHandshake } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
@@ -19,8 +19,6 @@ import SEO from "../data/seo";
 import techStack from "../data/techStack";
 
 import { Link } from "react-router-dom";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/homepage.css";
 
@@ -99,6 +97,43 @@ const Homepage = () => {
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
 								</div>
+
+								<div className="homepage-actions" aria-label="Primary actions">
+									<a
+										href="Muzamil_Saleem.pdf"
+										target="_blank"
+										rel="noreferrer"
+										download
+										aria-label="Download Muzamil Saleem resume"
+										className="homepage-action-btn homepage-action-tertiary"
+									>
+										Download Resume
+										<FontAwesomeIcon icon={faFileArrowDown} />
+									</a>
+
+									<Link
+										to="/projects"
+										className="homepage-action-btn homepage-action-secondary"
+									>
+										View Projects
+										<FontAwesomeIcon icon={faArrowRight} />
+									</Link>
+
+									<Link
+										to="/contact"
+										className="homepage-action-btn homepage-action-secondary"
+										>
+										Hire Me
+										<FontAwesomeIcon icon={faHandshake} />
+									</Link>
+								</div>
+
+								<div className="homepage-stats" role="list" aria-label="Professional highlights">
+									<div className="homepage-stat" role="listitem">2+ Years Experience</div>
+									<div className="homepage-stat" role="listitem">15+ Projects</div>
+									<div className="homepage-stat" role="listitem">20+ Technologies</div>
+									<div className="homepage-stat" role="listitem">Available for Work</div>
+								</div>
 							</div>
 
 							<div className="homepage-first-area-right-side">
@@ -106,7 +141,7 @@ const Homepage = () => {
 									<div className="homepage-image-wrapper">
 										<img
 											src="homepage.png"
-											alt="about"
+											alt="Portrait illustration of Muzamil Saleem"
 											className="homepage-image"
 										/>
 									</div>
@@ -119,6 +154,7 @@ const Homepage = () => {
 								href={INFO.socials.linkedin}
 								target="_blank"
 								rel="noreferrer"
+								aria-label="Visit Muzamil Saleem on LinkedIn"
 							>
 								<FontAwesomeIcon
 									icon={faLinkedin}
@@ -130,6 +166,7 @@ const Homepage = () => {
 								href={INFO.socials.github}
 								target="_blank"
 								rel="noreferrer"
+								aria-label="Visit Muzamil Saleem on GitHub"
 							>
 								<FontAwesomeIcon
 									icon={faGithub}
@@ -140,6 +177,7 @@ const Homepage = () => {
 								href={INFO.socials.instagram}
 								target="_blank"
 								rel="noreferrer"
+								aria-label="Visit Muzamil Saleem on Instagram"
 							>
 								<FontAwesomeIcon
 									icon={faInstagram}
@@ -150,6 +188,7 @@ const Homepage = () => {
 								href={`mailto:${INFO.main.email}`}
 								target="_blank"
 								rel="noreferrer"
+								aria-label="Email Muzamil Saleem"
 							>
 								<FontAwesomeIcon
 									icon={faMailBulk}
@@ -158,10 +197,11 @@ const Homepage = () => {
 							</a>
 
 							<a
-								href="/Full Stack (Muzamil Saleem).pdf"
+								href="Muzamil_Saleem.pdf"
 								target="_blank"
 								rel="noreferrer"
 								download
+								aria-label="Download Muzamil Saleem resume"
 							>
 								<FontAwesomeIcon
 									icon={faFileArrowDown}

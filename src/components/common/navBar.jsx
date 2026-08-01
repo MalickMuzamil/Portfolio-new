@@ -78,9 +78,14 @@ const NavBar = (props) => {
 								<Link to="/contact">Contact</Link>
 							</li>
 
-							<li className="nav-item theme-toggle" onClick={toggleTheme}>
+							<button
+								type="button"
+								className="nav-item theme-toggle"
+								onClick={toggleTheme}
+								aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+							>
 								<FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} />
-							</li>
+							</button>
 						</ul>
 					</div>
 				</nav>
