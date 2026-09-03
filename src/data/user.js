@@ -1,8 +1,8 @@
 const INFO = {
 	main: {
-		title: "Muzamil Saleem — Software Engineer, Full Stack & Data Engineer",
+		title: "Muzamil Saleem Software Engineer, Full Stack & Data Engineer",
 		name: "Muzamil Saleem",
-		email: "[malikmuzamil92110@gmail.com](mailto:malikmuzamil92110@gmail.com)",
+		email: "malikmuzamil92110@gmail.com",
 		logo: "../logo.png",
 	},
 
@@ -19,7 +19,7 @@ const INFO = {
 	},
 
 	about: {
-		title: "I'm Muzamil Saleem — Software Engineer, Full Stack Developer & Data Engineer.",
+		title: "I'm Muzamil Saleem Software Engineer, Full Stack Developer & Data Engineer.",
 		description:
 			`I am a results-driven Software Engineer, Full Stack Developer, and Data Engineer with hands-on experience building scalable web applications, backend services, data platforms, and production-ready engineering solutions.
 
@@ -29,7 +29,7 @@ const INFO = {
 
 		I work across both application and data layers, connecting backend systems with reliable data pipelines and analytics platforms. My cloud experience spans Microsoft Azure and Amazon Web Services, including services such as ADLS Gen2, Blob Storage, Synapse Analytics, S3, Glue, Lambda, Redshift, and Athena.
 
-		I focus on writing clean, maintainable code and building systems that are scalable, observable, testable, and production-ready — from user-facing applications and APIs to the data pipelines powering analytics and business intelligence.` ,
+		I focus on writing clean, maintainable code and building systems that are scalable, observable, testable, and production-ready from user-facing applications and APIs to the data pipelines powering analytics and business intelligence.` ,
 	},
 
 	articles: {
@@ -42,7 +42,7 @@ const INFO = {
 		{
 			title: "Metadata-Driven ETL Framework",
 			description:
-				"Designed and built a fully metadata-driven ETL pipeline on Azure Data Factory. Pipeline behavior — source, transformation rules, target, and scheduling — is controlled entirely via configuration tables, enabling zero-code onboarding of new data sources.",
+				"Designed and built a fully metadata-driven ETL pipeline on Azure Data Factory. Pipeline behavior source, transformation rules, target, and scheduling is controlled entirely via configuration tables, enabling zero-code onboarding of new data sources.",
 			logo: "/techstack/azure.svg",
 			stackIcons: [
 				"/techstack/azure.svg",
@@ -69,7 +69,7 @@ const INFO = {
 		},
 
 		{
-			title: "AWS Glue ELT Pipeline — Redshift Analytics",
+			title: "AWS Glue ELT Pipeline Redshift Analytics",
 			description:
 				"Built an ELT pipeline using AWS Glue and PySpark to ingest raw files from S3, apply schema enforcement and data quality checks, and load curated data into Amazon Redshift for analytics and BI consumption.",
 			logo: "/techstack/aws.svg",

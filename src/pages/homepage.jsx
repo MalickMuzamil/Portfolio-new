@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk, faArrowRight, faFileArrowDown, faHandshake } from "@fortawesome/free-solid-svg-icons";
+import {
+	faMailBulk,
+	faArrowRight,
+	faFileArrowDown,
+	faHandshake,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
 	faInstagram,
-	faLinkedin
+	faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
@@ -27,15 +32,16 @@ const Homepage = () => {
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
 
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
 	useEffect(() => {
 		const handleScroll = () => {
-			let scroll = Math.round(window.pageYOffset, 2);
+			const scroll = Math.round(window.pageYOffset, 2);
 
-			let newLogoSize = 80 - (scroll * 4) / 10;
+			const newLogoSize = 80 - (scroll * 4) / 10;
 
 			if (newLogoSize < oldLogoSize) {
 				if (newLogoSize > 40) {
@@ -52,6 +58,7 @@ const Homepage = () => {
 		};
 
 		window.addEventListener("scroll", handleScroll);
+
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [logoSize, oldLogoSize]);
 
@@ -64,14 +71,21 @@ const Homepage = () => {
 		zIndex: 999,
 		border: stayLogo ? "1px solid white" : "none",
 		borderRadius: stayLogo ? "50%" : "none",
-		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
+		boxShadow: stayLogo
+			? "0px 4px 10px rgba(0, 0, 0, 0.25)"
+			: "none",
 	};
 
 	return (
 		<React.Fragment>
 			<Helmet>
 				<title>{INFO.main.title}</title>
-				<meta name="description" content={currentSEO.description} />
+
+				<meta
+					name="description"
+					content={currentSEO.description}
+				/>
+
 				<meta
 					name="keywords"
 					content={currentSEO.keywords.join(", ")}
@@ -80,6 +94,7 @@ const Homepage = () => {
 
 			<div className="page-content">
 				<NavBar active="home" />
+
 				<div className="content-wrapper">
 					<div className="homepage-logo-container">
 						<div style={logoStyle}>
@@ -88,7 +103,11 @@ const Homepage = () => {
 					</div>
 
 					<div className="homepage-container" data-aos="fade-up">
-						<div className="homepage-first-area" data-aos="fade-up" data-aos-delay="100">
+						<div
+							className="homepage-first-area"
+							data-aos="fade-up"
+							data-aos-delay="100"
+						>
 							<div className="homepage-first-area-left-side">
 								<div className="title homepage-title">
 									{INFO.homepage.title}
@@ -98,7 +117,10 @@ const Homepage = () => {
 									{INFO.homepage.description}
 								</div>
 
-								<div className="homepage-actions" aria-label="Primary actions">
+								<div
+									className="homepage-actions"
+									aria-label="Primary actions"
+								>
 									<a
 										href="Muzamil_Saleem.pdf"
 										target="_blank"
@@ -122,18 +144,45 @@ const Homepage = () => {
 									<Link
 										to="/contact"
 										className="homepage-action-btn homepage-action-secondary"
-										>
+									>
 										Hire Me
 										<FontAwesomeIcon icon={faHandshake} />
 									</Link>
 								</div>
 
-								<div className="homepage-stats" role="list" aria-label="Professional highlights">
-								<div className="homepage-stat" role="listitem">3+ Years Experience</div>
-								<div className="homepage-stat" role="listitem">ETL · ELT · Medallion</div>
-								<div className="homepage-stat" role="listitem">AWS · Azure · Databricks</div>
-								<div className="homepage-stat" role="listitem">Available for Work</div>
-							</div>
+								<div
+									className="homepage-stats"
+									role="list"
+									aria-label="Professional highlights"
+								>
+									<div
+										className="homepage-stat"
+										role="listitem"
+									>
+										3+ Years Experience
+									</div>
+
+									<div
+										className="homepage-stat"
+										role="listitem"
+									>
+										Full Stack · APIs · Backend
+									</div>
+
+									<div
+										className="homepage-stat"
+										role="listitem"
+									>
+										Data Engineering · ETL · Cloud
+									</div>
+
+									<div
+										className="homepage-stat"
+										role="listitem"
+									>
+										Available for Work
+									</div>
+								</div>
 							</div>
 
 							<div className="homepage-first-area-right-side">
@@ -149,7 +198,11 @@ const Homepage = () => {
 							</div>
 						</div>
 
-						<div className="homepage-socials" data-aos="fade-up" data-aos-delay="200">
+						<div
+							className="homepage-socials"
+							data-aos="fade-up"
+							data-aos-delay="200"
+						>
 							<a
 								href={INFO.socials.linkedin}
 								target="_blank"
@@ -173,6 +226,7 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
+
 							<a
 								href={INFO.socials.instagram}
 								target="_blank"
@@ -184,8 +238,9 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
+
 							<a
-								href={`mailto:${INFO.main.email}`}
+								href={`mailto:${INFO.main.email} `}
 								target="_blank"
 								rel="noreferrer"
 								aria-label="Email Muzamil Saleem"
@@ -208,41 +263,50 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
-
 						</div>
 
-						<div className="homepage-projects" data-aos="fade-up" data-aos-delay="250">
+						<div
+							className="homepage-projects"
+							data-aos="fade-up"
+							data-aos-delay="250"
+						>
 							<AllProjects limit={3} />
 						</div>
 
-						<div className="homepage-more-projects" data-aos="fade-up" data-aos-delay="300">
-							<Link to="/projects" className="more-projects-btn">
+						<div
+							className="homepage-more-projects"
+							data-aos="fade-up"
+							data-aos-delay="300"
+						>
+							<Link
+								to="/projects"
+								className="more-projects-btn"
+							>
 								Show More Projects
 								<FontAwesomeIcon icon={faArrowRight} />
 							</Link>
 						</div>
 
 						<div className="homepage-after-title">
-
 							<div className="homepage-techstack">
 								{techStack.map((item, index) => (
 									<div
 										className="homepage-tech-card"
 										key={index}
 									>
-
 										<div className="tech-icon">
-											<img src={item.icon} alt={item.title} />
+											<img
+												src={item.icon}
+												alt={item.title}
+											/>
 										</div>
 
 										<div className="tech-title">
 											{item.title}
 										</div>
-
 									</div>
 								))}
 							</div>
-
 						</div>
 
 						<div className="page-footer">
@@ -253,6 +317,7 @@ const Homepage = () => {
 			</div>
 		</React.Fragment>
 	);
+
 };
 
 export default Homepage;
