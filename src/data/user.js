@@ -41,6 +41,7 @@ const INFO = {
 	projects: [
 		{
 			title: "Metadata-Driven ETL Framework",
+			category: "data-engineering",
 			description:
 				"Designed and built a fully metadata-driven ETL pipeline on Azure Data Factory. Pipeline behavior source, transformation rules, target, and scheduling is controlled entirely via configuration tables, enabling zero-code onboarding of new data sources.",
 			logo: "/techstack/azure.svg",
@@ -55,6 +56,7 @@ const INFO = {
 
 		{
 			title: "Medallion Architecture Data Lakehouse",
+			category: "data-engineering",
 			description:
 				"Implemented Bronze → Silver → Gold Medallion Architecture on Azure Data Lake Storage Gen2 with Databricks. Raw ingestion in Bronze, cleansed & conformed data in Silver, and business-aggregate Gold tables consumed by Power BI dashboards.",
 			logo: "/techstack/databricks.svg",
@@ -70,6 +72,7 @@ const INFO = {
 
 		{
 			title: "AWS Glue ELT Pipeline Redshift Analytics",
+			category: "data-engineering",
 			description:
 				"Built an ELT pipeline using AWS Glue and PySpark to ingest raw files from S3, apply schema enforcement and data quality checks, and load curated data into Amazon Redshift for analytics and BI consumption.",
 			logo: "/techstack/aws.svg",
@@ -85,6 +88,7 @@ const INFO = {
 
 		{
 			title: "Apache Airflow Orchestration Platform",
+			category: "data-engineering",
 			description:
 				"Designed a reusable Apache Airflow DAG framework to orchestrate multi-step data pipelines with dynamic DAG generation, retry handling, alerting, and SLA monitoring.",
 			logo: "/techstack/python.svg",
@@ -99,6 +103,7 @@ const INFO = {
 
 		{
 			title: "Executive Dashboard (Admin Panel)",
+			category: "full-stack",
 			description:
 				"Built a Next.js and Node.js-based admin platform for internal monitoring, analytics, and real-time data visualization with secure role-based access and REST API integration.",
 			logo: "/techstack/nextjs.svg",
@@ -114,6 +119,7 @@ const INFO = {
 
 		{
 			title: "Yanbu International Job Portal",
+			category: "full-stack",
 			description:
 				"Built a responsive Angular and Node.js job portal with multilingual Arabic/English support, REST API integration, dynamic job listings, and SQL-based data management.",
 			logo: "/techstack/angular.svg",
@@ -128,6 +134,7 @@ const INFO = {
 
 		{
 			title: "EverGreen Sable Web Application",
+			category: "full-stack",
 			description:
 				"Built a modern web application with responsive UI, optimized performance, dynamic data handling, CSV export, and Excel integration for automated data updates.",
 			logo: "/techstack/react.svg",
@@ -138,6 +145,7 @@ const INFO = {
 
 		{
 			title: "dbt Data Transformation Layer",
+			category: "data-engineering",
 			description:
 				"Developed a modular dbt transformation layer that converts raw ingested data into analytics-ready models using staging, intermediate, and mart conventions with lineage documentation.",
 			logo: "/techstack/sql.svg",
@@ -152,6 +160,7 @@ const INFO = {
 
 		{
 			title: "Employee Tracking System",
+			category: "full-stack",
 			description:
 				"Built an employee tracking application using Angular, Node.js, and MongoDB for employee activity monitoring, attendance management, and centralized data handling.",
 			logo: "/techstack/nodejs.svg",
@@ -166,6 +175,7 @@ const INFO = {
 
 		{
 			title: "Retail POS System (MEAN)",
+			category: "full-stack",
 			description:
 				"Built a full-stack point-of-sale system using the MEAN stack with product management, billing workflows, inventory operations, and persistent MongoDB storage.",
 			logo: "/techstack/nodejs.svg",
@@ -181,6 +191,7 @@ const INFO = {
 
 		{
 			title: "GPT Clone (MERN)",
+			category: "full-stack",
 			description:
 				"Built a full-stack ChatGPT-style application using the MERN stack with OpenAI integration, JWT authentication, API integration, and persistent chat history.",
 			logo: "/techstack/react.svg",
@@ -196,6 +207,7 @@ const INFO = {
 
 		{
 			title: "Hierarchy Survey App (MEAN)",
+			category: "full-stack",
 			description:
 				"Built a role-based MEAN stack survey platform with hierarchical access control, dynamic forms, and secure data visibility across organizational levels.",
 			logo: "/techstack/nodejs.svg",
@@ -211,6 +223,7 @@ const INFO = {
 
 		{
 			title: "Opticians CRM & eStore Platform",
+			category: "full-stack",
 			description:
 				"Built an Angular-based CRM and eStore registration platform with responsive UI, reusable components, and scalable frontend architecture.",
 			logo: "/techstack/angular.svg",
@@ -221,12 +234,60 @@ const INFO = {
 
 		{
 			title: "Delaeheim Master Car Inventory",
+			category: "full-stack",
 			description:
 				"Built a responsive car inventory web application using Next.js and Tailwind CSS with real-time search, filtering, and an OLX-style browsing experience.",
 			logo: "/techstack/nextjs.svg",
 			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
 			linkText: "View on GitHub",
 			link: "https://delaeheim-master.vercel.app/",
+		},
+
+		{
+			title: "AI Job Outreach Automation Platform",
+			category: "full-stack",
+			description:
+				"AI-powered job outreach system built with the MERN stack. Automates resume personalization, cover letter generation, PDF creation, scheduled email campaigns, and outreach tracking from a single platform using OpenRouter LLM support.",
+			logo: "/techstack/react.svg",
+			stackIcons: [
+				"/techstack/react.svg",
+				"/techstack/nodejs.svg",
+				"/techstack/mongodb.svg",
+				"/techstack/express.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil/Job-Outreach-AI",
+		},
+
+		{
+			title: "Finance Tracker",
+			category: "full-stack",
+			description:
+				"Full-stack personal finance management application with dedicated modules for Dashboard, Home Finance, Vehicles, and Len Den (Udhaar). Built with React + Vite, Node.js, Express, and MongoDB with JWT authentication, role-based access control, and PKR currency support.",
+			logo: "/techstack/react.svg",
+			stackIcons: [
+				"/techstack/react.svg",
+				"/techstack/nodejs.svg",
+				"/techstack/mongodb.svg",
+				"/techstack/express.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil/Finance-Tracker",
+		},
+
+		{
+			title: "Subhan Enterprises ATV & Quad Bike Website",
+			category: "full-stack",
+			description:
+				"Official ATV & Quad Bike dealership website built in Angular with smooth scroll animations, dynamic product showcasing, and mobile-optimized layouts. Features AOS animations, hero banner, product gallery, services section, and contact form.",
+			logo: "/techstack/angular.svg",
+			stackIcons: [
+				"/techstack/angular.svg",
+				"/techstack/javascript-icon.svg",
+				"/techstack/bootstrap.svg",
+			],
+			linkText: "View Project",
+			link: "https://subhan-enterprises.vercel.app/",
 		},
 	],
 
