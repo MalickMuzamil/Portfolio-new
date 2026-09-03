@@ -191,26 +191,47 @@ I follow principles such as:
 A typical data platform I work with follows a layered approach:
 
 Source Systems
+   
      │
+     
      ↓
+  
   Ingestion
+  
      │
+    
      ↓
+ 
  ┌─────────┐
+ 
  │ Bronze  │
+ 
  └─────────┘
+ 
      │
+     
      ↓
+ 
  ┌─────────┐
+ 
  │ Silver  │
+ 
  └─────────┘
+ 
      │
+     
      ↓
+ 
  ┌─────────┐
+ 
  │  Gold   │
+ 
  └─────────┘
+ 
      │
+     
      ↓
+
 Analytics / BI / Applications
 
 This approach helps create data platforms that are:
@@ -229,7 +250,7 @@ This approach helps create data platforms that are:
 
 ### 🚀 Featured Projects
 
-##📊 Metadata-Driven ETL Framework
+## 📊 Metadata-Driven ETL Framework
 
 A configuration-driven ETL framework built around metadata-based pipeline execution.
 
@@ -241,7 +262,7 @@ Technologies:
 
 3- mplemented a Bronze → Silver → Gold architecture using cloud storage and Databricks for scalable data processing and analytics.
 
-Technologies:
+## Technologies:
 
 1- Databricks Apache Spark PySpark Azure
 
@@ -249,7 +270,7 @@ Technologies:
 
 3- Built an ELT pipeline for ingesting raw data from S3, applying data quality and schema validation, and loading curated datasets into Redshift.
 
-Technologies:
+## Technologies:
 
 1- AWS Glue S3 PySpark Redshift SQL
 
@@ -299,17 +320,17 @@ Databases & Tools
 
 ## 📈 What I Care About
 
-1- Scalability       ████████████████████
+1- Scalability 
 
-2- Code Quality      ████████████████████
+2- Code Quality    
 
-3- Data Quality      ████████████████████
+3- Data Quality   
 
-4- Performance       ████████████████████
+4- Performance      
 
-5- Maintainability   ████████████████████
+5- Maintainability  
 
-6- Security          ████████████████████
+6- Security     
 
 I enjoy solving engineering problems where software, backend systems, and data come together.
 
@@ -357,7 +378,7 @@ Analytics Engineering
 
 <p align="center"> <a href="mailto:malikmuzamil92110@gmail.com"> <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail" /> </a> <a href="https://linkedin.com/in/malik-muzamil"> <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" /> </a> <a href="https://github.com/MalickMuzamil"> <img src="https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github" /> </a> </p>
 
-<h3 align="center"> Building software. Engineering data. Solving real-world problems. 🚀 </h3> <p align="center"> © Muzamil Saleem </p> ```
+<h3 align="center"> Building software. Engineering data. Solving real-world problems. 🚀 </h3> <p align="center"> © Muzamil Saleem </p> 
 
 ---
 
