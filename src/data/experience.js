@@ -1,44 +1,52 @@
 const experience = [
-
-{
-	company: "PostEx",
-	title: "Full Stack Developer",
-	date: "Nov 2025 — Present",
-	description:
-	"Developed an internal logistics back-office platform for shipment management and operational workflows. Built scalable REST APIs using Node.js and Express.js and implemented secure authentication and role-based access for internal users.",
-	benefits: [
-		"Improved shipment tracking and operational visibility for internal teams.",
-		"Enabled real-time data synchronization across internal logistics systems.",
-		"Reduced manual data handling by automating operational workflows."
-	]
-},
-
-{
-	company: "Team Seven (Pvt) Ltd",
-	title: "Full Stack Developer",
-	date: "Jul 2023 — Nov 2025",
-	description:
-	"Developed responsive landing pages and full stack web applications using Angular, HTML, CSS, and Bootstrap. Collaborated with designers and backend teams to deliver scalable UI solutions and maintain high code quality through Git-based workflows.",
-	benefits: [
-		"Improved UI responsiveness and cross-browser compatibility.",
-		"Delivered production-ready applications used by multiple clients.",
-		"Enhanced maintainability through modular component-based development."
-	]
-},
-
-{
-	company: "LitGrey Technologies",
-	title: "Frontend Developer",
-	date: "Jun 2025 — Oct 2025",
-	description:
-	"Worked on a CRM SaaS platform by building reusable Angular components and integrating RESTful APIs for dynamic data handling and dashboard features.",
-	benefits: [
-		"Improved dashboard performance and responsiveness.",
-		"Built modular UI components that increased development speed.",
-		"Enhanced scalability of the CRM platform interface."
-	]
-},
-
+	{
+		company: "Alpha Bridge",
+		title: "Associate Software Engineer",
+		date: "July 2026 — Present",
+		description:
+			"Working across software engineering, full stack development, and data engineering to build scalable business applications and data platforms. Developing modern web solutions, REST APIs, data pipelines, ETL workflows, and analytics systems while integrating reliable backend services with data-driven frontend experiences.",
+		benefits: [
+			"Developing scalable full stack applications using modern frontend, backend, and database technologies.",
+			"Building ETL pipelines and data workflows for reliable data integration, transformation, and analytics.",
+			"Designing REST APIs and data-driven systems connecting operational applications with analytics platforms."
+		]
+	},
+	{
+		company: "PostEx",
+		title: "Full Stack Developer & Data Engineer",
+		date: "Nov 2025 — July 2026",
+		description:
+			"Leading development of internal logistics data platforms by combining full stack engineering with data engineering. Architected ETL workflows, operational analytics systems, REST APIs, and data synchronization solutions for logistics applications.",
+		benefits: [
+			"Designed metadata-driven ETL pipelines reducing new data source onboarding time by 70%.",
+			"Implemented Bronze→Silver→Gold Medallion Architecture for scalable operational analytics.",
+			"Built scalable REST APIs and data services consumed by internal dashboards and reporting platforms."
+		]
+	},
+	{
+		company: "Team Seven (Pvt) Ltd",
+		title: "Full Stack Developer",
+		date: "Jul 2023 — Nov 2025",
+		description:
+			"Developed production-grade full stack applications using Angular, React, Node.js, and SQL/NoSQL databases. Built data-driven interfaces, backend services, reporting systems, and responsive enterprise applications across multiple client domains.",
+		benefits: [
+			"Delivered production-ready full stack applications across multiple business domains.",
+			"Integrated backend APIs, data visualization, and analytics into enterprise dashboards.",
+			"Improved application performance, responsiveness, and cross-browser compatibility."
+		]
+	},
+	{
+		company: "LitGrey Technologies",
+		title: "Frontend Developer",
+		date: "Jun 2025 — Oct 2025",
+		description:
+			"Built reusable Angular components and integrated RESTful APIs for a CRM SaaS platform. Developed data-driven dashboards, reporting interfaces, and interactive frontend experiences while collaborating with backend and data teams.",
+		benefits: [
+			"Built modular UI components accelerating feature delivery across the CRM platform.",
+			"Integrated dynamic data tables, charts, and analytics APIs into business dashboards.",
+			"Improved dashboard performance through component optimization and efficient data rendering."
+		]
+	}
 ];
 
 export default experience;

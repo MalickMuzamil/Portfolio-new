@@ -1,8 +1,8 @@
 const INFO = {
 	main: {
-		title: "Muzamil Saleem Portfolio",
+		title: "Muzamil Saleem — Software Engineer, Full Stack & Data Engineer",
 		name: "Muzamil Saleem",
-		email: "malikmuzamil92110@gmail.com",
+		email: "[malikmuzamil92110@gmail.com](mailto:malikmuzamil92110@gmail.com)",
 		logo: "../logo.png",
 	},
 
@@ -13,35 +13,94 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "Full Stack JavaScript Developer | Building Scalable Web Applications",
+		title: "Software Engineer, Full Stack Developer & Data Engineer | Web · APIs · Data · Cloud",
 		description:
-			"I am a Full Stack JavaScript Developer specializing in MERN and MEAN stack development. I work with modern technologies including ReactJS, Next.js, Angular, Node.js, and Express.js to build scalable and high-performance web applications. I also have strong experience with databases such as MongoDB, SQL, and MySQL for designing secure and efficient backend systems. I enjoy solving complex problems, learning new technologies, and writing clean, maintainable code following industry best practices.",
+			"I build scalable software applications and data engineering systems. On the software side, I develop modern full-stack applications, REST APIs, backend services, and data-driven interfaces using React, Next.js, Node.js, Angular, and SQL/NoSQL databases. On the data side, I design ETL/ELT pipelines, cloud data platforms, Medallion Architecture, and metadata-driven data workflows using AWS, Azure, Databricks, Python, PySpark, and SQL.",
 	},
 
 	about: {
-		title: "I'm Muzamil Saleem, a Full Stack Developer.",
+		title: "I'm Muzamil Saleem — Software Engineer, Full Stack Developer & Data Engineer.",
 		description:
-			`I am a passionate Full Stack Developer with strong experience in building modern, scalable, and high-performance web applications. My primary expertise lies in JavaScript technologies such as ReactJS, Next.js, Angular, Node.js, and Express.js. I enjoy developing complete solutions from frontend user interfaces to backend APIs and database architecture.
+			`I am a results-driven Software Engineer, Full Stack Developer, and Data Engineer with hands-on experience building scalable web applications, backend services, data platforms, and production-ready engineering solutions.
 
-			I have practical experience working with both NoSQL and SQL databases including MongoDB, MySQL, and SQL Server.My development approach focuses on writing clean, maintainable code while ensuring performance, scalability, and security of applications.
+		On the Software Engineering and Full Stack side, I build modern web applications using React, Next.js, Angular, Node.js, and Express.js. I develop REST APIs, backend services, authentication systems, dashboards, and data-driven interfaces backed by relational databases such as SQL Server, MySQL, and PostgreSQL, as well as NoSQL databases like MongoDB.
 
-			I am comfortable working with RESTful APIs, authentication systems, and modern development tools.I also have experience integrating third- party services and deploying applications using modern hosting platforms.
+		On the Data Engineering side, I design and implement scalable ETL and ELT pipelines using metadata-driven architecture principles. I apply Medallion Architecture (Bronze → Silver → Gold) to build reliable and analytics-ready data platforms. My experience includes Apache Spark, PySpark, Databricks, Azure Data Factory, AWS Glue, Redshift, SQL, Python, dbt, and Apache Airflow.
 
-			I am always eager to learn new technologies, improve my problem- solving skills, and stay updated with the latest trends in web development.My goal is to build user - friendly, efficient, and impactful digital products that provide real value to users.`,
+		I work across both application and data layers, connecting backend systems with reliable data pipelines and analytics platforms. My cloud experience spans Microsoft Azure and Amazon Web Services, including services such as ADLS Gen2, Blob Storage, Synapse Analytics, S3, Glue, Lambda, Redshift, and Athena.
+
+		I focus on writing clean, maintainable code and building systems that are scalable, observable, testable, and production-ready — from user-facing applications and APIs to the data pipelines powering analytics and business intelligence.` ,
 	},
 
-
 	articles: {
-		title: "Sharing my thoughts about web development and technology.",
+		title: "Insights on Software Engineering, Data Engineering, Cloud, and Full Stack Development.",
 		description:
-			"A collection of my thoughts, experiences, and knowledge about full stack development, JavaScript frameworks, and modern web technologies.",
+			"A collection of my thoughts, experiences, and learnings about software engineering, full stack development, backend systems, data pipelines, ETL/ELT patterns, cloud platforms, Medallion Architecture, and modern application development.",
 	},
 
 	projects: [
 		{
+			title: "Metadata-Driven ETL Framework",
+			description:
+				"Designed and built a fully metadata-driven ETL pipeline on Azure Data Factory. Pipeline behavior — source, transformation rules, target, and scheduling — is controlled entirely via configuration tables, enabling zero-code onboarding of new data sources.",
+			logo: "/techstack/azure.svg",
+			stackIcons: [
+				"/techstack/azure.svg",
+				"/techstack/python.svg",
+				"/techstack/sql.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil",
+		},
+
+		{
+			title: "Medallion Architecture Data Lakehouse",
+			description:
+				"Implemented Bronze → Silver → Gold Medallion Architecture on Azure Data Lake Storage Gen2 with Databricks. Raw ingestion in Bronze, cleansed & conformed data in Silver, and business-aggregate Gold tables consumed by Power BI dashboards.",
+			logo: "/techstack/databricks.svg",
+			stackIcons: [
+				"/techstack/databricks.svg",
+				"/techstack/azure.svg",
+				"/techstack/python.svg",
+				"/techstack/spark.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil",
+		},
+
+		{
+			title: "AWS Glue ELT Pipeline — Redshift Analytics",
+			description:
+				"Built an ELT pipeline using AWS Glue and PySpark to ingest raw files from S3, apply schema enforcement and data quality checks, and load curated data into Amazon Redshift for analytics and BI consumption.",
+			logo: "/techstack/aws.svg",
+			stackIcons: [
+				"/techstack/aws.svg",
+				"/techstack/python.svg",
+				"/techstack/spark.svg",
+				"/techstack/sql.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil",
+		},
+
+		{
+			title: "Apache Airflow Orchestration Platform",
+			description:
+				"Designed a reusable Apache Airflow DAG framework to orchestrate multi-step data pipelines with dynamic DAG generation, retry handling, alerting, and SLA monitoring.",
+			logo: "/techstack/python.svg",
+			stackIcons: [
+				"/techstack/python.svg",
+				"/techstack/azure.svg",
+				"/techstack/sql.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil",
+		},
+
+		{
 			title: "Executive Dashboard (Admin Panel)",
 			description:
-				"Next.js + Express.js + Node.js + MySQL based admin panel for internal monitoring, analytics, and real-time data visualization with secure role-based access.",
+				"Built a Next.js and Node.js-based admin platform for internal monitoring, analytics, and real-time data visualization with secure role-based access and REST API integration.",
 			logo: "/techstack/nextjs.svg",
 			stackIcons: [
 				"/techstack/nextjs.svg",
@@ -54,19 +113,9 @@ const INFO = {
 		},
 
 		{
-			title: "EverGreen Sable Web Application",
-			description:
-				"Built a modern web application with responsive UI animations and optimized performance. Implemented CSV export and dynamic Excel integration for automated data updates.",
-			logo: "/techstack/react.svg",
-			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
-			linkText: "View Project",
-			link: "https://evergreen-sable.vercel.app",
-		},
-
-		{
 			title: "Yanbu International Job Portal",
 			description:
-				"Angular + Node.js + SQL job portal with multilingual (Arabic / English) support, REST API integration, and responsive job listings.",
+				"Built a responsive Angular and Node.js job portal with multilingual Arabic/English support, REST API integration, dynamic job listings, and SQL-based data management.",
 			logo: "/techstack/angular.svg",
 			stackIcons: [
 				"/techstack/angular.svg",
@@ -78,33 +127,36 @@ const INFO = {
 		},
 
 		{
-			title: "Opticians CRM & eStore Platform",
+			title: "EverGreen Sable Web Application",
 			description:
-				"Angular-based CRM and eStore registration platform with responsive UI and scalable front-end architecture (frontend only).",
-			logo: "/techstack/angular.svg",
-			stackIcons: ["/techstack/angular.svg", "/techstack/bootstrap.svg"],
+				"Built a modern web application with responsive UI, optimized performance, dynamic data handling, CSV export, and Excel integration for automated data updates.",
+			logo: "/techstack/react.svg",
+			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
 			linkText: "View Project",
-			link: "https://opticians.pk",
+			link: "https://evergreen-sable.vercel.app",
 		},
 
 		{
-			title: "Subhan Enterprises ATV & Quad Bikes",
+			title: "dbt Data Transformation Layer",
 			description:
-				"Angular-powered product website for Subhan Enterprises showcasing ATVs and quad bikes with responsive UI and clean catalog layout.",
-			logo: "/techstack/angular.svg",
-			stackIcons: ["/techstack/angular.svg", "/techstack/bootstrap.svg"],
-			linkText: "View Project",
-			link: "https://subhan-enterprises.vercel.app",
+				"Developed a modular dbt transformation layer that converts raw ingested data into analytics-ready models using staging, intermediate, and mart conventions with lineage documentation.",
+			logo: "/techstack/sql.svg",
+			stackIcons: [
+				"/techstack/sql.svg",
+				"/techstack/python.svg",
+				"/techstack/databricks.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil",
 		},
 
 		{
 			title: "Employee Tracking System",
 			description:
-				"Employee tracking application built with Angular, Node.js, and MongoDB for monitoring employee activity and managing attendance data.",
+				"Built an employee tracking application using Angular, Node.js, and MongoDB for employee activity monitoring, attendance management, and centralized data handling.",
 			logo: "/techstack/nodejs.svg",
 			stackIcons: [
 				"/techstack/angular.svg",
-				"/techstack/bootstrap.svg",
 				"/techstack/nodejs.svg",
 				"/techstack/mongodb.svg",
 			],
@@ -113,24 +165,9 @@ const INFO = {
 		},
 
 		{
-			title: "Hierarchy Survey App (MEAN)",
-			description:
-				"MEAN stack survey platform where employees fill role-based forms and hierarchical access is enforced so each level only sees its own data.",
-			logo: "/techstack/nodejs.svg",
-			stackIcons: [
-				"/techstack/angular.svg",
-				"/techstack/nodejs.svg",
-				"/techstack/mongodb.svg",
-				"/techstack/express.svg",
-			],
-			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil/Survey-App",
-		},
-
-		{
 			title: "Retail POS System (MEAN)",
 			description:
-				"Point-of-sale system built on the MEAN stack with product management, billing workflow, and persistent data storage.",
+				"Built a full-stack point-of-sale system using the MEAN stack with product management, billing workflows, inventory operations, and persistent MongoDB storage.",
 			logo: "/techstack/nodejs.svg",
 			stackIcons: [
 				"/techstack/angular.svg",
@@ -143,74 +180,9 @@ const INFO = {
 		},
 
 		{
-			title: "Weather App (MERN)",
-			description:
-				"MERN stack weather dashboard consuming external APIs to display city-based forecasts with a clean, responsive UI.",
-			logo: "/techstack/react.svg",
-			stackIcons: [
-				"/techstack/react.svg",
-				"/techstack/nodejs.svg",
-				"/techstack/mongodb.svg",
-				"/techstack/express.svg",
-			],
-			linkText: "View Project",
-			link: "sky-cast-core.vercel.app/",
-		},
-
-		{
-			title: "Car Wash Booking UI",
-			description:
-				"Angular front-end for a car wash service with API integration and smooth booking/user flows.",
-			logo: "/techstack/angular.svg",
-			stackIcons: ["/techstack/angular.svg", "/techstack/bootstrap.svg"],
-			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil/Car-Wash",
-		},
-
-		{
-			title: "Rivio Web App UI",
-			description:
-				"Next.js-based UI for a modern reviews / SaaS-style product, focused on clean layout and performance.",
-			logo: "/techstack/nextjs.svg",
-			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
-			linkText: "View on GitHub",
-			link: "https://rivio-web.vercel.app/",
-		},
-
-		{
-			title: "Delaeheim Master Car Inventory",
-			description:
-				"Fully responsive car inventory web app built with Next.js and Tailwind CSS, featuring OLX-style real-time search and filtering.",
-			logo: "/techstack/nextjs.svg",
-			stackIcons: ["/techstack/nextjs.svg" , "/techstack/tailwindcss.svg"],
-			linkText: "View on GitHub",
-			link: "https://delaeheim-master.vercel.app/",
-		},
-
-		{
-			title: "Salient Next.js Template",
-			description:
-				"Modern, responsive Next.js template styled with Tailwind CSS and Tailwind UI components for rapid landing page and SaaS development.",
-			logo: "/techstack/nextjs.svg",
-			stackIcons: ["/techstack/nextjs.svg"],
-			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil",
-		},
-
-		{
-			title: "Static eCommerce Website",
-			description:
-				"Fully responsive static eCommerce site built with HTML5 and CSS3, including clean product grid, filtering, and intuitive navigation.",
-			logo: "/techstack/git.svg",
-			stackIcons: ["/techstack/html.svg", "/techstack/css.svg"],
-			linkText: "View on GitHub",
-			link: "https://github.com/MalickMuzamil/E-commerce",
-		},
-
-		{
 			title: "GPT Clone (MERN)",
 			description:
-				"Full-stack ChatGPT-style clone using the MERN stack with OpenAI integration, JWT auth, and persistent chat history.",
+				"Built a full-stack ChatGPT-style application using the MERN stack with OpenAI integration, JWT authentication, API integration, and persistent chat history.",
 			logo: "/techstack/react.svg",
 			stackIcons: [
 				"/techstack/react.svg",
@@ -223,15 +195,41 @@ const INFO = {
 		},
 
 		{
-			title: "MixViop VoIP Landing Page",
+			title: "Hierarchy Survey App (MEAN)",
 			description:
-				"Modern VoIP service marketing website built with pure HTML and CSS, focused on responsive layout and custom UI without frameworks.",
-			logo: "/techstack/git.svg",
+				"Built a role-based MEAN stack survey platform with hierarchical access control, dynamic forms, and secure data visibility across organizational levels.",
+			logo: "/techstack/nodejs.svg",
+			stackIcons: [
+				"/techstack/angular.svg",
+				"/techstack/nodejs.svg",
+				"/techstack/mongodb.svg",
+				"/techstack/express.svg",
+			],
+			linkText: "View on GitHub",
+			link: "https://github.com/MalickMuzamil/Survey-App",
+		},
+
+		{
+			title: "Opticians CRM & eStore Platform",
+			description:
+				"Built an Angular-based CRM and eStore registration platform with responsive UI, reusable components, and scalable frontend architecture.",
+			logo: "/techstack/angular.svg",
+			stackIcons: ["/techstack/angular.svg", "/techstack/bootstrap.svg"],
+			linkText: "View Project",
+			link: "https://opticians.pk",
+		},
+
+		{
+			title: "Delaeheim Master Car Inventory",
+			description:
+				"Built a responsive car inventory web application using Next.js and Tailwind CSS with real-time search, filtering, and an OLX-style browsing experience.",
+			logo: "/techstack/nextjs.svg",
 			stackIcons: ["/techstack/nextjs.svg", "/techstack/tailwindcss.svg"],
 			linkText: "View on GitHub",
-			link: "https://mix-viop.vercel.app/",
+			link: "https://delaeheim-master.vercel.app/",
 		},
 	],
+
 };
 
 export default INFO;
