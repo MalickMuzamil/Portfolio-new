@@ -7,9 +7,41 @@ import "./styles/project.css";
 
 const Project = (props) => {
 	const { logo, stackIcons, title, description, benefits, link } = props;
+
 	const normalizedLink = typeof link === "string" ? link.trim() : "";
 	const isGitHub = normalizedLink.includes("github.com");
 	const isLiveDemo = normalizedLink && !isGitHub;
+
+	const getTechName = (icon) => {
+		const iconPath = icon.toLowerCase();
+
+		if (iconPath.includes("python")) return "Python";
+		if (iconPath.includes("spark")) return "Apache Spark";
+		if (iconPath.includes("databricks")) return "Databricks";
+		if (iconPath.includes("aws")) return "AWS";
+		if (iconPath.includes("azure")) return "Azure";
+		if (iconPath.includes("sql")) return "SQL";
+
+		if (iconPath.includes("react")) return "React";
+		if (iconPath.includes("next")) return "Next.js";
+		if (iconPath.includes("angular")) return "Angular";
+		if (iconPath.includes("node")) return "Node.js";
+		if (iconPath.includes("express")) return "Express.js";
+		if (iconPath.includes("mysql")) return "MySQL";
+		if (iconPath.includes("mongodb")) return "MongoDB";
+		if (iconPath.includes("postgres")) return "PostgreSQL";
+
+		if (iconPath.includes("tailwind")) return "Tailwind CSS";
+		if (iconPath.includes("bootstrap")) return "Bootstrap";
+		if (iconPath.includes("javascript")) return "JavaScript";
+		if (iconPath.includes("typescript")) return "TypeScript";
+		if (iconPath.includes("html")) return "HTML";
+		if (iconPath.includes("css")) return "CSS";
+		if (iconPath.includes("git")) return "Git";
+		if (iconPath.includes("postman")) return "Postman";
+
+		return "Technology";
+	};
 
 	return (
 		<div className="project">
@@ -34,16 +66,24 @@ const Project = (props) => {
 				<div className="project-title">{title}</div>
 
 				{stackIcons && stackIcons.length > 0 && (
-					<div className="project-tech-badges" aria-label={`${title} tech stack`}>
+					<div
+						className="project-tech-badges"
+						aria-label={`${title} tech stack`}
+					>
 						{stackIcons.slice(0, 4).map((icon, index) => (
-							<span className="project-tech-badge" key={index}>
-								{icon.includes("react") ? "React" : icon.includes("next") ? "Next.js" : icon.includes("angular") ? "Angular" : icon.includes("node") ? "Node" : icon.includes("express") ? "Express" : icon.includes("mysql") ? "MySQL" : icon.includes("mongodb") ? "MongoDB" : icon.includes("bootstrap") ? "Bootstrap" : icon.includes("tailwind") ? "Tailwind" : icon.includes("html") ? "HTML" : icon.includes("css") ? "CSS" : "Tech"}
+							<span
+								className="project-tech-badge"
+								key={index}
+							>
+								{getTechName(icon)}
 							</span>
 						))}
 					</div>
 				)}
 
-				<div className="project-description">{description}</div>
+				<div className="project-description">
+					{description}
+				</div>
 
 				{benefits && (
 					<ul className="project-benefits">
@@ -62,7 +102,9 @@ const Project = (props) => {
 							className="project-action-btn project-action-demo"
 						>
 							<span className="project-action-icon">
-								<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+								<FontAwesomeIcon
+									icon={faArrowUpRightFromSquare}
+								/>
 							</span>
 							Live Demo
 						</a>
