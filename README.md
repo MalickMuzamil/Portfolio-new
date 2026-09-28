@@ -381,5 +381,3 @@ Analytics Engineering
 <h3 align="center"> Building software. Engineering data. Solving real-world problems. 🚀 </h3> <p align="center"> © Muzamil Saleem </p> 
 
 ---
-
-## Muzamil Saleem Associate Software Engineer | Full Stack Developer | Data Engineer
