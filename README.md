@@ -204,7 +204,7 @@ Source Systems
  
  ┌─────────┐
  
- │ Bronze  │
+ │ Bronze       │
  
  └─────────┘
  
@@ -214,7 +214,7 @@ Source Systems
  
  ┌─────────┐
  
- │ Silver  │
+ │ Silver       │
  
  └─────────┘
  
@@ -224,7 +224,7 @@ Source Systems
  
  ┌─────────┐
  
- │  Gold   │
+ │  Gold       │
  
  └─────────┘
  
