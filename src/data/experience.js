@@ -13,14 +13,14 @@ const experience = [
 	},
 	{
 		company: "PostEx",
-		title: "Full Stack Developer & Data Engineer",
+		title: "Associate Software Engineer",
 		date: "Nov 2025 — July 2026",
 		description:
-			"Leading development of internal logistics data platforms by combining full stack engineering with data engineering. Architected ETL workflows, operational analytics systems, REST APIs, and data synchronization solutions for logistics applications.",
+			"Worked as an Associate Software Engineer at a product-based logistics company, focusing on MEAN stack development and scalable system design. Developed high-impact logistics dashboards, maintained and enhanced existing production applications, and contributed to application architecture tailored around logistics business domains and high scalability requirements.",
 		benefits: [
-			"Designed metadata-driven ETL pipelines reducing new data source onboarding time by 70%.",
-			"Implemented Bronze→Silver→Gold Medallion Architecture for scalable operational analytics.",
-			"Built scalable REST APIs and data services consumed by internal dashboards and reporting platforms."
+			"Built responsive, real-time logistics dashboards and tracking interfaces using the MEAN stack (MongoDB, Express.js, Angular, Node.js).",
+			"Maintained and optimized existing core production applications, ensuring robust system design, clean modular architecture, and scalability.",
+			"Engineered business-domain-driven features for logistics operations, prioritizing scalability, high reliability, and optimal performance."
 		]
 	},
 	{

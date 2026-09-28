@@ -284,9 +284,9 @@ Associate Software Engineer (Alpha Bridge)
 
 Working across Software Engineering, Full Stack Development, and Data Engineering to build scalable applications, APIs, data pipelines, and data-driven systems.
 
-Full Stack Developer & Data Engineer (PostEx)
+Associate Software Engineer (PostEx)
 
-Working on internal logistics platforms combining full stack engineering and data engineering for operational systems, analytics, APIs, and scalable data pipelines.
+Engineered logistics dashboards and maintained core production applications using the MEAN stack, emphasizing system architecture, business domain modeling, and scalable product design.
 
 Full Stack Developer (Team Seven (Pvt) Ltd)
 
