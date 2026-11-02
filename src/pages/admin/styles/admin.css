@@ -1,0 +1,532 @@
+/* ==========================================================================
+   Admin Dashboard Styles - Matching Portfolio Theme
+   ========================================================================== */
+
+.admin-page-container {
+	min-height: 100vh;
+	background-color: var(--background-color);
+	color: var(--primary-color);
+	font-family: var(--secondary-font);
+	padding-bottom: 120px;
+	position: relative;
+}
+
+.admin-header {
+	border-bottom: 1px solid rgba(120, 120, 140, 0.15);
+	background: var(--card-bg);
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	backdrop-filter: blur(10px);
+}
+
+.admin-header-content {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 16px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.admin-brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.admin-brand-title {
+	font-family: var(--primary-font);
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.admin-badge {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 2px 8px;
+	border-radius: 9999px;
+	background: rgba(20, 184, 166, 0.15);
+	color: var(--link-color);
+	font-weight: 600;
+}
+
+.admin-header-actions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+/* Rate Limit Badge */
+.rate-limit-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 13px;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	border: 1px solid transparent;
+}
+
+.rate-limit-pill.available {
+	background: rgba(16, 185, 129, 0.12);
+	color: #10b981;
+	border-color: rgba(16, 185, 129, 0.25);
+}
+
+.rate-limit-pill.warning {
+	background: rgba(245, 158, 11, 0.12);
+	color: #f59e0b;
+	border-color: rgba(245, 158, 11, 0.25);
+}
+
+.rate-limit-pill.blocked {
+	background: rgba(239, 68, 68, 0.12);
+	color: #ef4444;
+	border-color: rgba(239, 68, 68, 0.25);
+	animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+	0%, 100% { border-color: rgba(239, 68, 68, 0.3); }
+	50% { border-color: rgba(239, 68, 68, 0.8); }
+}
+
+.rate-limit-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: currentColor;
+}
+
+.admin-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 16px;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	border: none;
+	transition: all 0.2s ease;
+	text-decoration: none;
+}
+
+.admin-btn-secondary {
+	background: rgba(120, 120, 140, 0.12);
+	color: var(--primary-color);
+}
+
+.admin-btn-secondary:hover {
+	background: rgba(120, 120, 140, 0.22);
+}
+
+.admin-btn-primary {
+	background: var(--link-color);
+	color: #ffffff;
+}
+
+.admin-btn-primary:hover:not(:disabled) {
+	opacity: 0.9;
+	transform: translateY(-1px);
+}
+
+.admin-btn-primary:disabled,
+.admin-btn-danger:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	transform: none;
+}
+
+.admin-btn-danger {
+	background: #ef4444;
+	color: #ffffff;
+}
+
+.admin-btn-danger:hover:not(:disabled) {
+	background: #dc2626;
+}
+
+/* Tabs Navigation */
+.admin-nav-tabs {
+	max-width: 1100px;
+	margin: 24px auto 0;
+	padding: 0 24px;
+	display: flex;
+	gap: 8px;
+	border-bottom: 1px solid rgba(120, 120, 140, 0.15);
+	overflow-x: auto;
+}
+
+.admin-tab-btn {
+	background: none;
+	border: none;
+	padding: 12px 18px;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--secondary-color);
+	cursor: pointer;
+	border-bottom: 3px solid transparent;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+	transition: all 0.2s ease;
+}
+
+.admin-tab-btn:hover {
+	color: var(--primary-color);
+}
+
+.admin-tab-btn.active {
+	color: var(--link-color);
+	border-bottom-color: var(--link-color);
+}
+
+/* Main Content Wrapper */
+.admin-content {
+	max-width: 1100px;
+	margin: 28px auto;
+	padding: 0 24px;
+}
+
+/* Glassmorphic Cards */
+.admin-card {
+	background: var(--card-bg);
+	border: 1px solid rgba(120, 120, 140, 0.15);
+	border-radius: 14px;
+	padding: 24px;
+	margin-bottom: 24px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+	transition: all 0.2s ease;
+}
+
+.admin-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid rgba(120, 120, 140, 0.1);
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.admin-card-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.admin-card-subtitle {
+	font-size: 13px;
+	color: var(--secondary-color);
+	margin-top: 4px;
+}
+
+/* Form Styles */
+.admin-form-group {
+	margin-bottom: 18px;
+}
+
+.admin-form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+}
+
+@media (max-width: 768px) {
+	.admin-form-row {
+		grid-template-columns: 1fr;
+	}
+}
+
+.admin-label {
+	display: block;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--primary-color);
+	margin-bottom: 6px;
+}
+
+.admin-input,
+.admin-textarea,
+.admin-select {
+	width: 100%;
+	padding: 10px 14px;
+	border-radius: 8px;
+	border: 1px solid rgba(120, 120, 140, 0.25);
+	background: var(--background-color);
+	color: var(--primary-color);
+	font-family: inherit;
+	font-size: 14px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	box-sizing: border-box;
+}
+
+.admin-input:focus,
+.admin-textarea:focus,
+.admin-select:focus {
+	outline: none;
+	border-color: var(--link-color);
+	box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+
+.admin-textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+/* List Items (Experience / Projects) */
+.admin-item-row {
+	background: rgba(120, 120, 140, 0.05);
+	border: 1px solid rgba(120, 120, 140, 0.15);
+	border-radius: 10px;
+	padding: 16px;
+	margin-bottom: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	transition: background 0.2s ease;
+}
+
+.admin-item-row:hover {
+	background: rgba(120, 120, 140, 0.09);
+}
+
+.admin-item-main {
+	flex: 1;
+	min-width: 0;
+}
+
+.admin-item-title {
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin-bottom: 4px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.admin-item-meta {
+	font-size: 13px;
+	color: var(--secondary-color);
+}
+
+.admin-item-controls {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.admin-icon-btn {
+	width: 34px;
+	height: 34px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	border: 1px solid rgba(120, 120, 140, 0.2);
+	background: var(--background-color);
+	color: var(--primary-color);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.admin-icon-btn:hover:not(:disabled) {
+	background: rgba(120, 120, 140, 0.15);
+	color: var(--link-color);
+}
+
+.admin-icon-btn:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.admin-icon-btn.delete:hover:not(:disabled) {
+	color: #ef4444;
+	border-color: #ef4444;
+}
+
+/* Techstack Multi-Select Badges */
+.tech-picker-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.tech-badge-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 500;
+	border: 1px solid rgba(120, 120, 140, 0.2);
+	background: var(--background-color);
+	color: var(--primary-color);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.tech-badge-toggle img {
+	width: 14px;
+	height: 14px;
+}
+
+.tech-badge-toggle.selected {
+	background: rgba(20, 184, 166, 0.15);
+	border-color: var(--link-color);
+	color: var(--link-color);
+	font-weight: 600;
+}
+
+/* Sticky Action Footer */
+.admin-sticky-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: var(--card-bg);
+	border-top: 1px solid rgba(120, 120, 140, 0.2);
+	padding: 14px 24px;
+	z-index: 40;
+	backdrop-filter: blur(12px);
+	box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-sticky-footer-inner {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.admin-status-message {
+	font-size: 14px;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Modal Overlay */
+.admin-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.65);
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	padding: 20px;
+}
+
+.admin-modal {
+	background: var(--card-bg);
+	border: 1px solid rgba(120, 120, 140, 0.25);
+	border-radius: 14px;
+	width: 100%;
+	max-width: 600px;
+	max-height: 90vh;
+	overflow-y: auto;
+	padding: 24px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.admin-modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+	margin-top: 24px;
+	padding-top: 16px;
+	border-top: 1px solid rgba(120, 120, 140, 0.15);
+}
+
+/* Login Modal Centerpiece */
+.admin-login-box {
+	max-width: 460px;
+	margin: 60px auto;
+	background: var(--card-bg);
+	border: 1px solid rgba(120, 120, 140, 0.2);
+	border-radius: 16px;
+	padding: 36px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+	text-align: center;
+}
+
+.admin-login-avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	margin: 0 auto 16px;
+	object-fit: cover;
+	border: 2px solid var(--link-color);
+}
+
+.admin-security-note {
+	background: rgba(20, 184, 166, 0.08);
+	border: 1px solid rgba(20, 184, 166, 0.2);
+	border-radius: 8px;
+	padding: 12px;
+	margin-top: 16px;
+	font-size: 12px;
+	color: var(--secondary-color);
+	line-height: 1.5;
+	text-align: left;
+}
+
+.admin-alert-error {
+	background: rgba(239, 68, 68, 0.1);
+	border: 1px solid rgba(239, 68, 68, 0.25);
+	color: #ef4444;
+	border-radius: 8px;
+	padding: 10px 14px;
+	margin-bottom: 16px;
+	font-size: 13px;
+	text-align: left;
+}
+
+/* Spinners */
+.spinner {
+	width: 14px;
+	height: 14px;
+	border: 2px solid currentColor;
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: spin 0.8s linear infinite;
+	display: inline-block;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+

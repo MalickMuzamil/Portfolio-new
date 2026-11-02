@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/footer.css";
 
 const Footer = () => {
+	const currentYear = new Date().getFullYear();
+
 	return (
 		<React.Fragment>
 			<div className="footer">
@@ -29,7 +33,20 @@ const Footer = () => {
 
 				<div className="footer-credits">
 					<div className="footer-credits-text">
-						© 2023 Muzamil Saleem. All Rights Reserved.
+						© {currentYear} Muzamil Saleem. All Rights Reserved.
+						<Link
+							to="/admin"
+							title="Admin Portal"
+							style={{
+								marginLeft: "8px",
+								color: "var(--tertiary-color)",
+								opacity: 0.6,
+								textDecoration: "none",
+								display: "inline-block",
+							}}
+						>
+							<FontAwesomeIcon icon={faLock} style={{ fontSize: "11px" }} />
+						</Link>
 					</div>
 				</div>
 			</div>

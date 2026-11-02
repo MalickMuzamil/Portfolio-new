@@ -10,6 +10,8 @@ import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Experience from "./pages/experience";
 import Notfound from "./pages/404";
+import Admin from "./pages/admin/Admin";
+import { AdminProvider } from "./context/AdminContext";
 
 import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
@@ -35,16 +37,19 @@ function App() {
 	}, [location.pathname]);
 
 	return (
-		<div className="App">
-			<Routes>
-				<Route path="/" element={<Homepage />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/experience" element={<Experience />} />
-				<Route path="/projects" element={<Projects />} />
-				<Route path="/contact" element={<Contact />} />
-				<Route path="*" element={<Notfound />} />
-			</Routes>
-		</div>
+		<AdminProvider>
+			<div className="App">
+				<Routes>
+					<Route path="/" element={<Homepage />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/experience" element={<Experience />} />
+					<Route path="/projects" element={<Projects />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/admin" element={<Admin />} />
+					<Route path="*" element={<Notfound />} />
+				</Routes>
+			</div>
+		</AdminProvider>
 	);
 }
 
