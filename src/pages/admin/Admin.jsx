@@ -61,12 +61,6 @@ const Admin = () => {
 		JSON.parse(JSON.stringify(initialExperience))
 	);
 
-	// GitHub remote sync state
-	const [remoteFileShas, setRemoteFileShas] = useState({
-		userSha: null,
-		experienceSha: null,
-	});
-
 	// Recent commits from GitHub for rate limit auditing
 	const [recentCommits, setRecentCommits] = useState([]);
 
@@ -74,24 +68,15 @@ const Admin = () => {
 	const [isPublishing, setIsPublishing] = useState(false);
 	const [publishStatusText, setPublishStatusText] = useState("");
 	const [notification, setNotification] = useState(null);
-	const [commitMessage, setCommitMessage] = useState("feat(portfolio): update portfolio content via Admin Dashboard");
+	const commitMessage = "feat(portfolio): update portfolio content via Admin Dashboard";
 
-	// Fetch latest file SHAs and recent commits from GitHub on login
+	// Fetch recent commits from GitHub on login
 	const syncWithGitHub = useCallback(async () => {
 		if (!githubToken) return;
 		try {
 			// Fetch commit history to verify recent commit timestamps for rate limit
 			const commits = await fetchCommitHistory(githubToken, "src/data", 10).catch(() => []);
 			setRecentCommits(commits);
-
-			// Fetch latest SHAs from main branch
-			const userFile = await fetchRepoFile(githubToken, "src/data/user.js").catch(() => null);
-			const expFile = await fetchRepoFile(githubToken, "src/data/experience.js").catch(() => null);
-
-			setRemoteFileShas({
-				userSha: userFile?.sha || null,
-				experienceSha: expFile?.sha || null,
-			});
 		} catch (err) {
 			console.warn("GitHub sync check:", err.message);
 		}
