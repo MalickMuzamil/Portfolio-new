@@ -4,14 +4,8 @@
 Associate Software Engineer • Full Stack Developer • Data Engineer
 </h3>
 
-<p align="center">
-  <a href="https://github.com/MalickMuzamil">
-    <img src="https://img.shields.io/badge/GitHub-Muzamil%20Saleem-181717?style=for-the-badge&logo=github" />
-  </a>
-  <a href="https://linkedin.com/in/malik-muzamil">
-    <img src="https://img.shields.io/badge/LinkedIn-Muzamil%20Saleem-0A66C2?style=for-the-badge&logo=linkedin" />
-  </a>
-</p>
+[![GitHub](https://img.shields.io/badge/GitHub-Muzamil%20Saleem-181717?style=for-the-badge&logo=github)](https://github.com/MalickMuzamil)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Muzamil%20Saleem-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/malik-muzamil)
 
 ---
 
