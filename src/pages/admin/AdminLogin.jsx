@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAdmin } from "../../context/AdminContext";
 import { verifyGitHubToken, GITHUB_CONFIG } from "../../utils/github";
+import AdminToast from "./AdminToast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -45,6 +46,7 @@ const AdminLogin = () => {
 
 	return (
 		<div className="admin-page-container admin-login-wrapper">
+			<AdminToast />
 			{/* Ambient Aura Background Orbs */}
 			<div className="admin-aura-orb admin-aura-orb-1" aria-hidden="true" />
 			<div className="admin-aura-orb admin-aura-orb-2" aria-hidden="true" />

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useAdmin } from "../../context/AdminContext";
 import AdminLogin from "./AdminLogin";
+import AdminToast from "./AdminToast";
 import RateLimitBadge from "./RateLimitBadge";
 import HomeEditor from "./HomeEditor";
 import ExperienceEditor from "./ExperienceEditor";
@@ -31,7 +32,6 @@ import {
 	faArrowUpRightFromSquare,
 	faCloudUploadAlt,
 	faUndo,
-	faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/admin.css";
@@ -63,6 +63,8 @@ const Admin = () => {
 		githubToken,
 		adminUser,
 		logout,
+		showToast,
+		dismissToast,
 		recordAction,
 		getRateLimitInfo,
 	} = useAdmin();
@@ -91,7 +93,6 @@ const Admin = () => {
 	// Publishing state
 	const [isPublishing, setIsPublishing] = useState(false);
 	const [publishStatusText, setPublishStatusText] = useState("");
-	const [notification, setNotification] = useState(null);
 	const commitMessage = "feat(portfolio): update portfolio content via Admin Dashboard";
 
 	// Fetch recent commits from GitHub on login
@@ -126,29 +127,36 @@ const Admin = () => {
 
 	// Discard unsaved changes
 	const handleResetChanges = () => {
-		if (window.confirm("Discard all unsaved edits and reset to your last saved version?")) {
-			setInfoData(JSON.parse(JSON.stringify(baselineInfo)));
-			setExperienceData(JSON.parse(JSON.stringify(baselineExperience)));
-			setCvFile(null);
-			setNotification({ type: "info", message: "Draft reverted to last saved state." });
-		}
+		setInfoData(JSON.parse(JSON.stringify(baselineInfo)));
+		setExperienceData(JSON.parse(JSON.stringify(baselineExperience)));
+		setCvFile(null);
+		showToast("info", "Draft discarded", "Your saved portfolio content is unchanged.");
+	};
+
+	const handleLogout = () => {
+		showToast("info", "Signed out", "Your admin session has been securely closed.");
+		logout();
 	};
 
 	// Publish changes directly to GitHub
 	const handlePublishToGitHub = async () => {
 		if (!hasChanges) {
-			alert("No changes detected to publish.");
+			showToast("info", "Nothing to publish", "There are no unsaved changes.");
 			return;
 		}
 
 		if (!rateLimitInfo.isAllowed) {
-			alert(`Rate limit reached! You can only push/revert 3 times per 10 minutes. Please wait for the cooldown.`);
+			showToast(
+				"error",
+				"Publish temporarily unavailable",
+				`You have reached the 3-publish limit. Try again in ${rateLimitInfo.secondsRemaining} seconds.`
+			);
 			return;
 		}
 
 		setIsPublishing(true);
 		setPublishStatusText("Connecting to GitHub...");
-		setNotification(null);
+		dismissToast();
 
 		try {
 			// 1. Fetch latest SHAs
@@ -206,18 +214,20 @@ const Admin = () => {
 			setBaselineExperience(JSON.parse(JSON.stringify(experienceData)));
 			setCvFile(null);
 
-			setNotification({
-				type: "success",
-				message: "Success! Pushed changes to GitHub 'main'. Vercel has initiated a live deployment (~45s).",
-			});
+			showToast(
+				"success",
+				"Publish complete",
+				"Changes are on GitHub. Your live site will update after deployment."
+			);
 
 			await syncWithGitHub();
 		} catch (err) {
 			console.error("Publish error:", err);
-			setNotification({
-				type: "error",
-				message: `Deployment failed: ${err.message || "Could not push to GitHub."}`,
-			});
+			showToast(
+				"error",
+				"Publish failed",
+				err.message || "Could not push changes to GitHub."
+			);
 		} finally {
 			setIsPublishing(false);
 			setPublishStatusText("");
@@ -226,10 +236,11 @@ const Admin = () => {
 
 	// Callback when rollback completes
 	const handleRollbackComplete = async () => {
-		setNotification({
-			type: "success",
-			message: "Rollback committed to GitHub! Refreshing page to align with restored version.",
-		});
+		showToast(
+			"success",
+			"Rollback complete",
+			"Restored content was pushed. Refreshing to load the restored version."
+		);
 		await syncWithGitHub();
 		setTimeout(() => {
 			window.location.reload();
@@ -243,6 +254,7 @@ const Admin = () => {
 
 	return (
 		<div className="admin-page-container">
+			<AdminToast />
 			{/* Ambient Aura Background Orbs */}
 			<div className="admin-aura-orb admin-aura-orb-1" aria-hidden="true" />
 			<div className="admin-aura-orb admin-aura-orb-2" aria-hidden="true" />
@@ -282,7 +294,7 @@ const Admin = () => {
 						<button
 							type="button"
 							className="admin-btn admin-btn-secondary"
-							onClick={logout}
+							onClick={handleLogout}
 							title="Log out and wipe in-memory token"
 						>
 							<FontAwesomeIcon icon={faSignOutAlt} />
@@ -330,36 +342,6 @@ const Admin = () => {
 					<span>History & Rollback</span>
 				</button>
 			</nav>
-
-			{/* Notification Banner */}
-			<div className="admin-content" style={{ marginBottom: 0, paddingBottom: 0 }}>
-				{notification && (
-					<div
-						className={`admin-security-note ${
-							notification.type === "error" ? "admin-alert-error" : ""
-						}`}
-						style={
-							notification.type === "success"
-								? { background: "rgba(16, 185, 129, 0.12)", borderColor: "rgba(16, 185, 129, 0.3)", color: "#10b981" }
-								: {}
-						}
-					>
-						<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-							<span>
-								{notification.type === "success" && <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 6 }} />}
-								{notification.message}
-							</span>
-							<button
-								type="button"
-								style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", fontWeight: "bold" }}
-								onClick={() => setNotification(null)}
-							>
-								&times;
-							</button>
-						</div>
-					</div>
-				)}
-			</div>
 
 			{/* Main Tab Panels */}
 			<main className="admin-content">

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useMemo } from "react";
+import React, { createContext, useContext, useState, useCallback, useMemo, useRef } from "react";
 import { calculateRateLimitStatus, GITHUB_CONFIG } from "../utils/github";
 
 const AdminContext = createContext(null);
@@ -9,6 +9,8 @@ export const AdminProvider = ({ children }) => {
 	const [adminUser, setAdminUser] = useState(null);
 	const [githubToken, setGithubToken] = useState("");
 	const [adminEmail, setAdminEmail] = useState("");
+	const [toast, setToast] = useState(null);
+	const toastId = useRef(0);
 
 	// In-memory sliding window action timestamps for push/revert
 	const [inMemoryActions, setInMemoryActions] = useState([]);
@@ -38,6 +40,15 @@ export const AdminProvider = ({ children }) => {
 		setInMemoryActions([]);
 	}, []);
 
+	const showToast = useCallback((type, title, message) => {
+		toastId.current += 1;
+		setToast({ id: toastId.current, type, title, message });
+	}, []);
+
+	const dismissToast = useCallback(() => {
+		setToast(null);
+	}, []);
+
 	// Compute current rate limit
 	const getRateLimitInfo = useCallback(
 		(recentCommits = []) => {
@@ -53,8 +64,11 @@ export const AdminProvider = ({ children }) => {
 			githubToken,
 			adminEmail,
 			inMemoryActions,
+			toast,
 			login,
 			logout,
+			showToast,
+			dismissToast,
 			recordAction,
 			getRateLimitInfo,
 		}),
@@ -64,8 +78,11 @@ export const AdminProvider = ({ children }) => {
 			githubToken,
 			adminEmail,
 			inMemoryActions,
+			toast,
 			login,
 			logout,
+			showToast,
+			dismissToast,
 			recordAction,
 			getRateLimitInfo,
 		]
@@ -85,4 +102,3 @@ export const useAdmin = () => {
 	}
 	return context;
 };
-
