@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAdmin } from "../../context/AdminContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faProjectDiagram,
@@ -36,6 +37,7 @@ const AVAILABLE_TECH_ICONS = [
 ];
 
 const ProjectsEditor = ({ projects = [], onChange }) => {
+	const { showToast } = useAdmin();
 	const [activeFilter, setActiveFilter] = useState("all");
 	const [editingIndex, setEditingIndex] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,6 +88,7 @@ const ProjectsEditor = ({ projects = [], onChange }) => {
 
 	const handleSave = (e) => {
 		e.preventDefault();
+		const isEditing = editingIndex !== null;
 		const updatedProject = { ...formData };
 
 		if (editingIndex === null) {
@@ -96,12 +99,22 @@ const ProjectsEditor = ({ projects = [], onChange }) => {
 			onChange(updatedList);
 		}
 		closeModal();
+		showToast(
+			"success",
+			isEditing ? "Project updated" : "Project added",
+			"Publish your draft to apply this change to the live portfolio."
+		);
 	};
 
 	const handleDelete = (realIndex) => {
 		if (window.confirm(`Are you sure you want to delete "${projects[realIndex].title}"?`)) {
 			const updatedList = projects.filter((_, i) => i !== realIndex);
 			onChange(updatedList);
+			showToast(
+				"success",
+				"Project deleted",
+				"Publish your draft to apply this change to the live portfolio."
+			);
 		}
 	};
 
@@ -113,6 +126,7 @@ const ProjectsEditor = ({ projects = [], onChange }) => {
 		updatedList[realIndex] = updatedList[targetIndex];
 		updatedList[targetIndex] = temp;
 		onChange(updatedList);
+		showToast("success", "Projects reordered", "Publish your draft to apply this change.");
 	};
 
 	const toggleStackIcon = (iconPath) => {

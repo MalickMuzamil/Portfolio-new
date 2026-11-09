@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAdmin } from "../../context/AdminContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBriefcase,
@@ -12,6 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ExperienceEditor = ({ experiences, onChange, cvFile, onCvChange }) => {
+	const { showToast } = useAdmin();
 	const [editingIndex, setEditingIndex] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [cvError, setCvError] = useState("");
@@ -57,6 +59,7 @@ const ExperienceEditor = ({ experiences, onChange, cvFile, onCvChange }) => {
 
 	const handleSave = (e) => {
 		e.preventDefault();
+		const isEditing = editingIndex !== null;
 		const cleanedBenefits = formData.benefits.filter((b) => b && b.trim() !== "");
 		const updatedItem = {
 			...formData,
@@ -73,12 +76,22 @@ const ExperienceEditor = ({ experiences, onChange, cvFile, onCvChange }) => {
 			onChange(updatedList);
 		}
 		closeModal();
+		showToast(
+			"success",
+			isEditing ? "Experience updated" : "Experience added",
+			"Publish your draft to apply this change to the live portfolio."
+		);
 	};
 
 	const handleDelete = (index) => {
 		if (window.confirm(`Are you sure you want to delete "${experiences[index].company}" experience?`)) {
 			const updatedList = experiences.filter((_, i) => i !== index);
 			onChange(updatedList);
+			showToast(
+				"success",
+				"Experience deleted",
+				"Publish your draft to apply this change to the live portfolio."
+			);
 		}
 	};
 
@@ -90,6 +103,7 @@ const ExperienceEditor = ({ experiences, onChange, cvFile, onCvChange }) => {
 		updatedList[index] = updatedList[targetIndex];
 		updatedList[targetIndex] = temp;
 		onChange(updatedList);
+		showToast("success", "Experience reordered", "Publish your draft to apply this change.");
 	};
 
 	// Bullets helpers
@@ -126,6 +140,7 @@ const ExperienceEditor = ({ experiences, onChange, cvFile, onCvChange }) => {
 
 		setCvError("");
 		onCvChange(file);
+		showToast("success", "CV ready", "Publish your draft to update the portfolio CV.");
 		event.target.value = "";
 	};
 
