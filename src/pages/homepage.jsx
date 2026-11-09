@@ -2,26 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 import {
-	faMailBulk,
 	faArrowRight,
 	faFileArrowDown,
 	faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faGithub,
-	faInstagram,
-	faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
+import SocialLinks from "../components/common/socialLinks";
 import AllProjects from "../components/projects/allProjects";
+import TechStack from "../components/techstack/techstack";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import techStack from "../data/techStack";
 
 import { Link } from "react-router-dom";
 
@@ -203,66 +198,7 @@ const Homepage = () => {
 							data-aos="fade-up"
 							data-aos-delay="200"
 						>
-							<a
-								href={INFO.socials.linkedin}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="Visit Muzamil Saleem on LinkedIn"
-							>
-								<FontAwesomeIcon
-									icon={faLinkedin}
-									className="homepage-social-icon"
-								/>
-							</a>
-
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="Visit Muzamil Saleem on GitHub"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="Visit Muzamil Saleem on Instagram"
-							>
-								<FontAwesomeIcon
-									icon={faInstagram}
-									className="homepage-social-icon"
-								/>
-							</a>
-
-							<a
-								href={`mailto:${INFO.main.email} `}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="Email Muzamil Saleem"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
-
-							<a
-								href="Muzamil_Saleem.pdf"
-								target="_blank"
-								rel="noreferrer"
-								download
-								aria-label="Download Muzamil Saleem resume"
-							>
-								<FontAwesomeIcon
-									icon={faFileArrowDown}
-									className="homepage-social-icon"
-								/>
-							</a>
+							<SocialLinks />
 						</div>
 
 						<div
@@ -287,26 +223,8 @@ const Homepage = () => {
 							</Link>
 						</div>
 
-						<div className="homepage-after-title">
-							<div className="homepage-techstack">
-								{techStack.map((item, index) => (
-									<div
-										className="homepage-tech-card"
-										key={index}
-									>
-										<div className="tech-icon">
-											<img
-												src={item.icon}
-												alt={item.title}
-											/>
-										</div>
-
-										<div className="tech-title">
-											{item.title}
-										</div>
-									</div>
-								))}
-							</div>
+						<div className="homepage-after-title" data-aos="fade-up" data-aos-delay="350">
+							<TechStack />
 						</div>
 
 						<div className="page-footer">

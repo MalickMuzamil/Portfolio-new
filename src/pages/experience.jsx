@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet";
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
+import ExperienceTimeline from "../components/experience/ExperienceTimeline";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import experience from "../data/experience";
 
 import "./styles/experience.css";
 
@@ -16,7 +16,7 @@ const Experience = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const currentSEO = SEO.find((item) => item.page === "about");
+	const currentSEO = SEO.find((item) => item.page === "experience") || SEO.find((item) => item.page === "about");
 
 	return (
 		<React.Fragment>
@@ -46,36 +46,7 @@ const Experience = () => {
 								I've contributed to logistics systems, CRM platforms, and business-facing web applications across the full stack. My work has involved building responsive interfaces, developing scalable APIs, and shipping features that support daily operations and long-term product stability.
 							</div>
 
-							<div className="experience-container">
-								{experience.map((item, index) => (
-									<div
-										className="experience-item"
-										key={index}
-										data-aos="fade-up"
-										data-aos-delay={120 + index * 80}
-									>
-										<div className="experience-dot"></div>
-
-										<div className="experience-card">
-											<div className="experience-header">
-												<div className="experience-title">{item.title}</div>
-												<div className="experience-date">{item.date}</div>
-											</div>
-
-											<div className="experience-company">{item.company}</div>
-											<div className="experience-description">{item.description}</div>
-
-											{item.benefits && item.benefits.length > 0 && (
-												<ul className="experience-benefits">
-													{item.benefits.map((benefit, benefitIndex) => (
-														<li key={benefitIndex}>{benefit}</li>
-													))}
-												</ul>
-											)}
-										</div>
-									</div>
-								))}
-							</div>
+							<ExperienceTimeline />
 						</div>
 						<div className="page-footer">
 							<Footer />

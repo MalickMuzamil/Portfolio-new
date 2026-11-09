@@ -72,6 +72,25 @@ const SEO = [
 	},
 
 	{
+		page: "experience",
+		description:
+			"Professional career history and work experience of Muzamil Saleem — Associate Software Engineer and Data Engineer building scalable applications, CRM platforms, and high-performance data workflows.",
+		keywords: [
+			"Muzamil Saleem Experience",
+			"Muzamil Saleem Resume",
+			"Muzamil Saleem CV",
+			"Associate Software Engineer Experience",
+			"Software Engineer Work History",
+			"Full Stack Engineer Experience",
+			"Data Engineer Experience",
+			"PostEx Software Engineer",
+			"React Node.js Career",
+			"Data Engineering Career",
+			"Software Engineering Portfolio",
+		],
+	},
+
+	{
 		page: "projects",
 		description:
 			"Explore projects by Muzamil Saleem including full stack web applications, REST APIs, backend systems, data engineering platforms, metadata-driven ETL frameworks, Medallion Architecture, AWS Glue pipelines, Azure Data Factory workflows, and Databricks solutions.",

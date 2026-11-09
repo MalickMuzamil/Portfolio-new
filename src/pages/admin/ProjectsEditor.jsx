@@ -156,7 +156,7 @@ const ProjectsEditor = ({ projects = [], onChange }) => {
 				</div>
 
 				{/* Filter Tabs */}
-				<div style={{ display: "flex", gap: 8, marginBottom: 18 }}>
+				<div className="admin-filter-bar">
 					<button
 						type="button"
 						className={`tech-badge-toggle ${activeFilter === "all" ? "selected" : ""}`}

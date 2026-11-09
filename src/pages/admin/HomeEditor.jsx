@@ -188,9 +188,6 @@ const HomeEditor = ({ info, onChange }) => {
 						value={info.about?.description || ""}
 						onChange={(e) => handleAboutChange("description", e.target.value)}
 					/>
-					<span style={{ fontSize: 12, color: "var(--secondary-color)", marginTop: 4, display: "block" }}>
-						Multiple paragraphs will render formatted with line breaks on your about page.
-					</span>
 				</div>
 			</div>
 		</div>

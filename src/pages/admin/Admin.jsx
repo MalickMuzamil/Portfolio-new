@@ -202,6 +202,11 @@ const Admin = () => {
 
 	return (
 		<div className="admin-page-container">
+			{/* Ambient Aura Background Orbs */}
+			<div className="admin-aura-orb admin-aura-orb-1" aria-hidden="true" />
+			<div className="admin-aura-orb admin-aura-orb-2" aria-hidden="true" />
+			<div className="admin-aura-orb admin-aura-orb-3" aria-hidden="true" />
+
 			{/* Top Header */}
 			<header className="admin-header">
 				<div className="admin-header-content">
@@ -224,7 +229,7 @@ const Admin = () => {
 						/>
 
 						<a
-							href="https://muzamil-salee.vercel.app"
+							href="https://muzamil-saleem.vercel.app"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="admin-btn admin-btn-secondary"
@@ -350,12 +355,14 @@ const Admin = () => {
 				<div className="admin-sticky-footer-inner">
 					<div className="admin-status-message">
 						{hasChanges ? (
-							<span style={{ color: "#f59e0b" }}>
-								&bull; You have unsaved edits in memory.
+							<span style={{ color: "#fbbf24", display: "inline-flex", alignItems: "center", gap: 8 }}>
+								<span className="admin-status-dot dirty" />
+								<span>You have unsaved edits in memory</span>
 							</span>
 						) : (
-							<span style={{ color: "var(--secondary-color)" }}>
-								&bull; All changes are currently up to date with repository.
+							<span style={{ color: "var(--admin-text-muted)", display: "inline-flex", alignItems: "center", gap: 8 }}>
+								<span className="admin-status-dot clean" />
+								<span>All changes are synchronized with repository</span>
 							</span>
 						)}
 					</div>

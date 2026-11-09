@@ -120,11 +120,10 @@ const HistoryRollback = ({ onRollbackComplete, rateLimitInfo }) => {
 					</button>
 				</div>
 
-				{/* Notice Banner */}
+				{/* Safety Notice */}
 				<div className="admin-security-note" style={{ marginBottom: 20 }}>
-					<FontAwesomeIcon icon={faExclamationTriangle} style={{ color: "#f59e0b", marginRight: 6 }} />
-					<strong>Safety Limit Rules:</strong> You can rollback to any of the last{" "}
-					<strong>{GITHUB_CONFIG.maxRollbackCommits} commits</strong>. Every rollback or push counts toward your shared rate limit (max 3 actions per 10 minutes).
+					<FontAwesomeIcon icon={faExclamationTriangle} style={{ color: "#fbbf24", marginRight: 8 }} />
+					<span>Instant snapshot rollback is available for the last <strong>{GITHUB_CONFIG.maxRollbackCommits} commits</strong>.</span>
 				</div>
 
 				{error && <div className="admin-alert-error">{error}</div>}
@@ -162,16 +161,13 @@ const HistoryRollback = ({ onRollbackComplete, rateLimitInfo }) => {
 							return (
 								<div
 									key={c.sha}
-									className="admin-item-row"
-									style={{
-										borderLeft: isCurrentHead ? "3px solid var(--link-color)" : "1px solid rgba(120, 120, 140, 0.15)",
-									}}
+									className={`admin-item-row ${isCurrentHead ? "admin-commit-current" : ""}`}
 								>
 									<div className="admin-item-main">
 										<div className="admin-item-title">
 											<span style={{ fontSize: 14 }}>{c.message}</span>
 											{isCurrentHead && (
-												<span className="admin-badge" style={{ background: "rgba(16, 185, 129, 0.15)", color: "#10b981" }}>
+												<span className="admin-badge" style={{ background: "rgba(16, 185, 129, 0.18)", color: "#34d399", borderColor: "rgba(16, 185, 129, 0.4)" }}>
 													Current Live Version
 												</span>
 											)}
@@ -245,29 +241,15 @@ const HistoryRollback = ({ onRollbackComplete, rateLimitInfo }) => {
 							Are you sure you want to revert your portfolio to commit:
 						</p>
 
-						<div
-							style={{
-								background: "rgba(120, 120, 140, 0.08)",
-								padding: "12px 16px",
-								borderRadius: 8,
-								margin: "12px 0",
-								border: "1px solid rgba(120, 120, 140, 0.2)",
-							}}
-						>
-							<div style={{ fontWeight: 600, marginBottom: 4 }}>"{selectedCommit.message}"</div>
+						<div className="admin-commit-preview-box">
+							<div style={{ fontWeight: 600, marginBottom: 4, color: "#ffffff" }}>"{selectedCommit.message}"</div>
 							<div style={{ fontSize: 12, color: "var(--secondary-color)" }}>
 								Commit SHA: <code>{selectedCommit.sha}</code> &bull; {formatRelativeTime(selectedCommit.date)}
 							</div>
 						</div>
 
 						<div className="admin-security-note">
-							<strong>What happens next:</strong>
-							<ul style={{ margin: "6px 0 0 18px", padding: 0 }}>
-								<li>Files <code>src/data/user.js</code> and <code>src/data/experience.js</code> will be restored to that snapshot.</li>
-								<li>A new revert commit will be pushed directly to GitHub <code>main</code>.</li>
-								<li>Vercel will immediately begin a live production redeployment (~45s).</li>
-								<li>This action will use 1 of your 3 allowed operations for the 10-minute window.</li>
-							</ul>
+							Restores <code>user.js</code> and <code>experience.js</code> to this commit and triggers a Vercel production deployment.
 						</div>
 
 						<div className="admin-modal-actions">
