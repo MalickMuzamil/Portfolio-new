@@ -34,7 +34,7 @@ const experience = [
 	},
 	{
 		"company": "LitGrey Technologies",
-		"title": "Frontend Developer",
+		"title": "Angular Developer",
 		"date": "Jun 2025 — Oct 2025",
 		"description": "Built reusable Angular components and integrated RESTful APIs for a CRM SaaS platform. Developed data-driven dashboards, reporting interfaces, and interactive frontend experiences while collaborating with backend and data teams.",
 		"benefits": [
