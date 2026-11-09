@@ -14,7 +14,9 @@ import initialExperience from "../../data/experience";
 import { serializeInfo, serializeExperience } from "../../utils/serializer";
 import {
 	fetchRepoFile,
+	fetchRepoFileSha,
 	commitRepoFile,
+	commitRepoFileBase64,
 	fetchCommitHistory,
 	GITHUB_CONFIG,
 } from "../../utils/github";
@@ -34,6 +36,27 @@ import {
 
 import "./styles/admin.css";
 
+const readFileAsBase64 = (file) =>
+	new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.onerror = () => reject(new Error("Could not read the selected CV file."));
+		reader.onload = () => {
+			if (typeof reader.result !== "string") {
+				reject(new Error("Could not read the selected CV file."));
+				return;
+			}
+
+			const separatorIndex = reader.result.indexOf(",");
+			if (separatorIndex === -1) {
+				reject(new Error("Could not encode the selected CV file."));
+				return;
+			}
+
+			resolve(reader.result.slice(separatorIndex + 1));
+		};
+		reader.readAsDataURL(file);
+	});
+
 const Admin = () => {
 	const {
 		isAuthenticated,
@@ -52,6 +75,7 @@ const Admin = () => {
 	const [experienceData, setExperienceData] = useState(() =>
 		JSON.parse(JSON.stringify(initialExperience))
 	);
+	const [cvFile, setCvFile] = useState(null);
 
 	// Committed baseline to detect changes
 	const [baselineInfo, setBaselineInfo] = useState(() =>
@@ -97,14 +121,15 @@ const Admin = () => {
 	const hasChanges = useMemo(() => {
 		const infoChanged = JSON.stringify(infoData) !== JSON.stringify(baselineInfo);
 		const expChanged = JSON.stringify(experienceData) !== JSON.stringify(baselineExperience);
-		return infoChanged || expChanged;
-	}, [infoData, baselineInfo, experienceData, baselineExperience]);
+		return infoChanged || expChanged || Boolean(cvFile);
+	}, [infoData, baselineInfo, experienceData, baselineExperience, cvFile]);
 
 	// Discard unsaved changes
 	const handleResetChanges = () => {
 		if (window.confirm("Discard all unsaved edits and reset to your last saved version?")) {
 			setInfoData(JSON.parse(JSON.stringify(baselineInfo)));
 			setExperienceData(JSON.parse(JSON.stringify(baselineExperience)));
+			setCvFile(null);
 			setNotification({ type: "info", message: "Draft reverted to last saved state." });
 		}
 	};
@@ -130,6 +155,9 @@ const Admin = () => {
 			setPublishStatusText("Verifying latest repository commit...");
 			const currentUserFile = await fetchRepoFile(githubToken, "src/data/user.js");
 			const currentExpFile = await fetchRepoFile(githubToken, "src/data/experience.js");
+			const currentCvSha = cvFile
+				? await fetchRepoFileSha(githubToken, "public/Muzamil_Saleem.pdf")
+				: null;
 
 			// 2. Serialize in-memory data
 			setPublishStatusText("Generating clean JavaScript source code...");
@@ -158,12 +186,25 @@ const Admin = () => {
 				currentExpFile.sha
 			);
 
-			// 5. Record write action for 10-minute rate limiting
+			if (cvFile) {
+				setPublishStatusText("Uploading updated portfolio CV...");
+				const cvBase64 = await readFileAsBase64(cvFile);
+				await commitRepoFileBase64(
+					githubToken,
+					"public/Muzamil_Saleem.pdf",
+					cvBase64,
+					msg,
+					currentCvSha
+				);
+			}
+
+			// Record write action for 10-minute rate limiting
 			recordAction(Date.now());
 
-			// 6. Update baseline
+			// Update baseline
 			setBaselineInfo(JSON.parse(JSON.stringify(infoData)));
 			setBaselineExperience(JSON.parse(JSON.stringify(experienceData)));
+			setCvFile(null);
 
 			setNotification({
 				type: "success",
@@ -330,6 +371,8 @@ const Admin = () => {
 					<ExperienceEditor
 						experiences={experienceData}
 						onChange={setExperienceData}
+						cvFile={cvFile}
+						onCvChange={setCvFile}
 					/>
 				)}
 

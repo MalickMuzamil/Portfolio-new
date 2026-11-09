@@ -11,9 +11,10 @@ import {
 	faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ExperienceEditor = ({ experiences, onChange }) => {
+const ExperienceEditor = ({ experiences, onChange, cvFile, onCvChange }) => {
 	const [editingIndex, setEditingIndex] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [cvError, setCvError] = useState("");
 
 	// Form State
 	const [formData, setFormData] = useState({
@@ -107,6 +108,27 @@ const ExperienceEditor = ({ experiences, onChange }) => {
 		setFormData({ ...formData, benefits: newBenefits.length ? newBenefits : [""] });
 	};
 
+	const handleCvChange = (event) => {
+		const file = event.target.files[0];
+		if (!file) return;
+
+		if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+			setCvError("Please select a PDF file.");
+			event.target.value = "";
+			return;
+		}
+
+		if (file.size > 10 * 1024 * 1024) {
+			setCvError("The PDF must be smaller than 10 MB.");
+			event.target.value = "";
+			return;
+		}
+
+		setCvError("");
+		onCvChange(file);
+		event.target.value = "";
+	};
+
 	return (
 		<div className="experience-editor-container">
 			<div className="admin-card">
@@ -177,6 +199,52 @@ const ExperienceEditor = ({ experiences, onChange }) => {
 							</div>
 						</div>
 					))}
+				</div>
+			</div>
+
+			<div className="admin-card">
+				<div className="admin-card-header">
+					<div>
+						<h3 className="admin-card-title">
+							<FontAwesomeIcon icon={faBriefcase} style={{ color: "var(--link-color)" }} />
+							<span>Portfolio CV (PDF)</span>
+						</h3>
+						<span className="admin-card-subtitle">
+							Select your updated PDF, then publish to replace the CV used by the portfolio download links.
+						</span>
+					</div>
+					<a
+						className="admin-btn admin-btn-secondary"
+						href="/Muzamil_Saleem.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View Current CV
+					</a>
+				</div>
+
+				<div className="admin-form-group">
+					<label className="admin-label" htmlFor="admin-cv-upload">Upload updated CV</label>
+					<input
+						id="admin-cv-upload"
+						type="file"
+						className="admin-input"
+						accept=".pdf,application/pdf"
+						onChange={handleCvChange}
+					/>
+					{cvError && <div className="admin-alert-error" role="alert">{cvError}</div>}
+					{cvFile && (
+						<div className="admin-item-meta" style={{ marginTop: 10 }}>
+							<span>Ready to publish: {cvFile.name} ({(cvFile.size / (1024 * 1024)).toFixed(2)} MB)</span>
+							<button
+								type="button"
+								className="admin-btn admin-btn-secondary"
+								onClick={() => onCvChange(null)}
+							>
+								Cancel CV update
+							</button>
+						</div>
+					)}
 				</div>
 			</div>
 
@@ -299,4 +367,3 @@ const ExperienceEditor = ({ experiences, onChange }) => {
 };
 
 export default ExperienceEditor;
-

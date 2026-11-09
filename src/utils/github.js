@@ -77,13 +77,38 @@ export async function fetchRepoFile(token, filePath, ref = GITHUB_CONFIG.branch)
 	};
 }
 
+export async function fetchRepoFileSha(token, filePath, ref = GITHUB_CONFIG.branch) {
+	const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filePath}?ref=${ref}`;
+	const response = await fetch(url, {
+		headers: {
+			Authorization: `Bearer ${token.trim()}`,
+			Accept: "application/vnd.github.v3+json",
+		},
+	});
+
+	if (!response.ok) {
+		throw new Error(`Failed to fetch ${filePath} from GitHub (${response.status}): ${response.statusText}`);
+	}
+
+	const data = await response.json();
+	return data.sha;
+}
+
 /**
  * Commit updated file directly to repository main branch
  */
 export async function commitRepoFile(token, filePath, contentString, commitMessage, fileSha) {
-	const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filePath}`;
-	const base64Content = utf8ToBase64(contentString);
+	return commitRepoFileBase64(
+		token,
+		filePath,
+		utf8ToBase64(contentString),
+		commitMessage,
+		fileSha
+	);
+}
 
+export async function commitRepoFileBase64(token, filePath, base64Content, commitMessage, fileSha) {
+	const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filePath}`;
 	const bodyPayload = {
 		message: commitMessage,
 		content: base64Content,
@@ -106,6 +131,15 @@ export async function commitRepoFile(token, filePath, contentString, commitMessa
 
 	if (!response.ok) {
 		const err = await response.json().catch(() => ({}));
+		if (
+			response.status === 403 &&
+			err.message === "Resource not accessible by personal access token"
+		) {
+			throw new Error(
+				"GitHub rejected this token's write access. For a fine-grained token, select the MalickMuzamil/Portfolio-new repository and grant Contents: Read and write. For a classic token, enable the repo scope (or public_repo for a public repository). Then log out and sign in again with the updated token."
+			);
+		}
+
 		throw new Error(`GitHub commit failed (${response.status}): ${err.message || response.statusText}`);
 	}
 
@@ -227,4 +261,3 @@ export async function revertToCommit(token, targetCommitSha, targetCommitMessage
 
 	return results;
 }
-
