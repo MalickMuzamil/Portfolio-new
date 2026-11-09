@@ -4,8 +4,14 @@
 Associate Software Engineer • Full Stack Developer • Data Engineer
 </h3>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Malick%20Muzamil-181717?style=for-the-badge&logo=github)](https://github.com/MalickMuzamil)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Muzamil%20Saleem-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/malik-muzamil)
+<p align="center">
+  <a href="https://github.com/MalickMuzamil">
+    <img src="https://img.shields.io/badge/GitHub-Muzamil%20Saleem-181717?style=for-the-badge&logo=github&v=1" alt="GitHub Badge" />
+  </a>
+  <a href="https://linkedin.com/in/malik-muzamil">
+    <img src="https://img.shields.io/badge/LinkedIn-Muzamil%20Saleem-0A66C2?style=for-the-badge&logo=linkedin&v=1" alt="LinkedIn Badge" />
+  </a>
+</p>
 
 ---
 
@@ -176,69 +182,6 @@ I follow principles such as:
 - Secure Backend Authorization
 
 - Maintainable Code
-
----
-
-
-## 🔄 Data Engineering Architecture
-
-A typical data platform I work with follows a layered approach:
-
-Source Systems
-   
-     │
-     
-     ↓
-  
-  Ingestion
-  
-     │
-    
-     ↓
- 
- ┌─────────┐
- 
- │ Bronze       │
- 
- └─────────┘
- 
-     │
-     
-     ↓
- 
- ┌─────────┐
- 
- │ Silver       │
- 
- └─────────┘
- 
-     │
-     
-     ↓
- 
- ┌─────────┐
- 
- │  Gold       │
- 
- └─────────┘
- 
-     │
-     
-     ↓
-
-Analytics / BI / Applications
-
-This approach helps create data platforms that are:
-
-1- Reliable
-
-2- Governed
-
-3- Scalable
-
-4- Analytics-ready
-
-5- Easier to maintain
 
 ---
 
