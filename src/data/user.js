@@ -1,6 +1,6 @@
 const INFO = {
 	"main": {
-		"title": "Muzamil Saleem Software Engineer, Full Stack & Data Engineer",
+		"title": "Muzamil Saleem Software Engineer | Full Stack & Cloud Data Engineer",
 		"name": "Muzamil Saleem",
 		"email": "malikmuzamil92110@gmail.com",
 		"logo": "../logo.png"
